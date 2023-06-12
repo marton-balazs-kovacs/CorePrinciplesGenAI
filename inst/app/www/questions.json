@@ -1,0 +1,156 @@
+{ "Head": [ 
+  {
+    "Type": "textInput",
+    "Label": "Title of the Study",
+    "AnswerType": "",
+    "Name": "studyTitle"
+  },
+  {
+    "Type": "textInput",
+    "Label": "All Authors [Given name(s) Surname;]",
+    "AnswerType": "",
+    "Name": "authorNames"
+  },
+  {
+    "Type": "textInput",
+    "Label": "Corresponding author's email address",
+    "AnswerType": "@",
+    "Name": "correspondingEmail"
+  },
+  {
+    "Type": "textInput",
+    "Label": "Link to Project Repository",
+    "AnswerType": "",
+    "Name": "linkToRepository"
+  }
+  ],
+  "Sections" : {
+    "Valami": {
+      "Name": "Valami",
+      "Questions": [
+        {
+          "Type": "radio",
+          "Label": "Do the relevant regulations and policies allow the use of AI tools in your work?",
+          "AnswerType": "Yes",
+          "Name": "ind_1"
+        },
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_1_explain"
+        },
+        {
+          "Type": "radio",
+          "Label": "Did you secure data privacy when using AI?",
+          "AnswerType": "YesNa",
+          "Name": "ind_2"
+        },
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_2_explain"
+        },
+        {
+          "Type": "select",
+          "Label": "Are you accountable for all the outcome created with the help of AI?",
+          "AnswerType": "Yes",
+          "Name": "ind_3"
+        },    
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_3_explain"
+        },
+        {
+          "Type": "select",
+          "Label": "Is the use of AI documented and reported according to the relevant transparency standards?",
+          "AnswerType": "Yes",
+          "Name": "ind_4"
+        },    
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_4_explain"
+        },
+        {
+          "Type": "select",
+          "Label": "Did you have specific quality criteria for the outputs of your AI tool?",
+          "AnswerType": "YesNa",
+          "Name": "ind_5"
+        },
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_5_explain"
+        },
+        {
+          "Type": "select",
+          "Label": "Did a human contributor assess the set quality criteria?",
+          "AnswerType": "YesNa",
+          "Name": "ind_6"
+        },   
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_6_explain"
+        },
+        {
+          "Type": "select",
+          "Label": "Did you make sure not using someone else’s work without appropriate accreditation?",
+          "AnswerType": "YesNa",
+          "Name": "ind_7"
+        },   
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_7_explain"
+        },
+        {
+          "Type": "select",
+          "Label": "Are you aware of the potential effects of your AI usage on the environment?",
+          "AnswerType": "Yes",
+          "Name": "ind_8"
+        },
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_8_explain"
+        },
+        {
+          "Type": "select",
+          "Label": "Did you assess the potential biases and unfairness that can result from AI usage in your project?",
+          "AnswerType": "YesNa",
+          "Name": "ind_9"
+        },
+        {
+          "Type": "textArea",
+          "Label": "Explain",
+          "AnswerType": "",
+          "Name": "ind_9_explain"
+        }
+      ]
+    }
+  },
+  "Answers": {
+    "YesNo": {"Yes": "Yes", "No": "No", "N/A": "NA"},
+    "YesNa": {"Yes": "Yes", "N/A": "NA"},
+    "Yes": {"Yes": "Yes"},
+    "BeforeExplain": {"before any data were collected.": "before any data were collected",
+                      "after some data were collected, but before exploring the data.": "after some data were collected, but before exploring the data",
+                      "after all data were collected, but before exploring the data.": "after all data were collected, but before exploring the data",
+                      "after exploring the data, but before any statistical analyses were conducted.": "after exploring the data, but before any statistical analyses were conducted",
+                      "after some but not all statistical analyses were conducted.": "after some but not all statistical analyses were conducted", 
+                      "at another time, explain:": "at another time, explain" },
+    "AlltoNone": {"All": "All", "Partially": "Partially", "None": "None", "N/A": "NA"},
+    "YesExplain": {"Yes": "Yes", "Explain": "Explain"},
+    "Explain": "Provide an explanation here..."
+  }
+}    

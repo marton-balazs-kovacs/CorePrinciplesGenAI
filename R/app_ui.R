@@ -5,12 +5,62 @@
 #' @import shiny
 #' @noRd
 app_ui <- function(request) {
+  # Get UI elements
+  checklist <- golem::get_golem_options("checklist")
+  
+  app_title <- "Criteria for AI-usage in REsearch (CARE)"
+  
+  # UI
   tagList(
+    #actionButton("browser", "browser"),
+    #tags$script("$('#browser').hide();"),
+    
     # Leave this function for adding external resources
     golem_add_external_resources(),
-    # Your application UI logic
+    # Your application UI logic 
     fluidPage(
-      h1("CARE")
+      theme = shinythemes::shinytheme("cerulean"),
+      # Application title
+      headerPanel(
+        column(12,
+               with_i18n(app_title, NULL),
+               align = "center"
+        ),
+        windowTitle = "CARE 1.0"
+      ),
+      br(),
+      # The header (basic information about the paper and authors)
+      mod_header_ui("header", checklist = checklist),
+      # Show initial instructions
+      fluidRow(
+        column(1),
+        column(
+          10,
+          h3("Please select an answer for each item below. If you want to elaborate on your answers, you can do so in the comment box that follows each section.") |> with_i18n(NULL)
+        ),
+        column(1)
+      ),
+      br(),
+      br(),
+      tags$div(id = "scrollAnchor"), # for scrolling up
+      # Show questions
+      #mod_sections_ui("sections", checklist = checklist),
+      # Switching between sections
+      br(),
+      br(),
+      # Report menu (downloading)
+      #mod_report_ui("report"),
+      br(),
+      br(),
+      # info modal
+      #mod_intro_ui("intro"),
+      # Select language
+      absolutePanel(
+        mod_language_ui("language"),
+        top = "3%", right = "2%",
+        # fixed = TRUE,
+        width = "10%"
+      )
     )
   )
 }
@@ -34,8 +84,11 @@ golem_add_external_resources <- function() {
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "CARE"
-    )
+    ),
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
+    shinyjs::useShinyjs(), # this is for enabling/disabling buttons from shinyjs
+    shinyFeedback::useShinyFeedback(), # enabling/disabling feedback from shinyFeedback
+    shinyanimate::withAnim() # enable animations from shinyanimate
   )
 }

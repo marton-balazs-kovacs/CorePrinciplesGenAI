@@ -17,6 +17,23 @@
 ## Amend DESCRIPTION with dependencies read from package code parsing
 ## install.packages('attachment') # if needed.
 attachment::att_amend_desc()
+usethis::use_package( "stringr" )
+usethis::use_package("shinyWidgets")
+usethis::use_package("shinyjs")
+usethis::use_package("shinyBS")
+usethis::use_package("shinyFeedback")
+usethis::use_package("shinyanimate")
+usethis::use_package("shinythemes")
+usethis::use_package("shinycssloaders")
+usethis::use_package("bsplus")
+usethis::use_package("rjson")
+usethis::use_package("RCurl") # for checking whether url.exists
+usethis::use_package("digest")
+usethis::use_package("knitr")
+usethis::use_package("markdown")
+usethis::use_package("rmarkdown")
+usethis::use_package("purrr")
+usethis::use_package("base64enc")
 
 ## Add modules ----
 ## Create a module infrastructure in R/

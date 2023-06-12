@@ -20,12 +20,12 @@
 ##
 golem::fill_desc(
   pkg_name = "CARE", # The Name of the package containing the App
-  pkg_title = "PKG_TITLE", # The Title of the package containing the App
-  pkg_description = "PKG_DESC.", # The Description of the package containing the App
-  author_first_name = "AUTHOR_FIRST", # Your First Name
-  author_last_name = "AUTHOR_LAST", # Your Last Name
-  author_email = "AUTHOR@MAIL.COM", # Your Email
-  repo_url = NULL, # The URL of the GitHub Repo (optional),
+  pkg_title = "Criteria for AI-usage in REsearch", # The Title of the package containing the App
+  pkg_description = "Checklist for assessing responsible use of AI in research.", # The Description of the package containing the App
+  author_first_name = "Marton", # Your First Name
+  author_last_name = "Kovacs", # Your Last Name
+  author_email = "marton.balazs.kovacs@gmail.com", # Your Email
+  repo_url = "https://github.com/marton-balazs-kovacs/CARE", # The URL of the GitHub Repo (optional),
   pkg_version = "0.0.0.9000" # The Version of the package containing the App
 )
 
@@ -37,7 +37,7 @@ golem::install_dev_deps()
 
 ## Create Common Files ----
 ## See ?usethis for more information
-usethis::use_mit_license("Golem User") # You can set another license here
+usethis::use_mit_license("Marton Kovacs and Balazs Aczel") # You can set another license here
 usethis::use_readme_rmd(open = FALSE)
 devtools::build_readme()
 # Note that `contact` is required since usethis version 2.1.5
@@ -55,8 +55,8 @@ golem::use_recommended_tests()
 
 ## Favicon ----
 # If you want to change the favicon (default is golem's one)
-golem::use_favicon() # path = "path/to/ico". Can be an online file.
-# golem::remove_favicon() # Uncomment to remove the default favicon
+#golem::use_favicon() # path = "path/to/ico". Can be an online file.
+golem::remove_favicon() # Uncomment to remove the default favicon
 
 ## Add helper functions ----
 golem::use_utils_ui(with_test = TRUE)

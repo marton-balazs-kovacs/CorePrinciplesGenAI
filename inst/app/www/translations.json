@@ -1,0 +1,228 @@
+{
+  "languages": [
+    ["English"],
+    ["Hungarian"]
+  ],
+  "translation": [
+    {
+      "English": ["English"],
+      "Hungarian": ["magyar"]
+    },
+    {
+      "English": ["Provided email appears invalid."],
+      "Hungarian": ["A megadott e-mail cím érvénytelen."]
+    },
+    {
+      "English": ["The link cannot be accessed."],
+      "Hungarian": ["A link nem elérhető."]
+    },
+    {
+      "English": ["Word and rtf files cannot be previewed in the browser, displaying markdown file"],
+      "Hungarian": ["Word és rtf fájlok előnézete nem megtekinthető a böngészőben, helyettük markdown fájlt jelenítünk meg"]
+    },
+    {
+      "English": ["CARE"],
+      "Hungarian": ["CARE"]
+    },
+    {
+      "English": ["Criteria for AI-usage in REsearch (CARE)"],
+      "Hungarian": ["Criteria for AI-usage in REsearch (CARE)"]
+    },
+    {
+      "English": ["Select Language"],
+      "Hungarian": ["Nyelv kiválasztása"]
+    },
+    {
+      "English": ["Please select an answer for each item below. If you want to elaborate on your answers, you can do so in the comment box that follows each section."],
+      "Hungarian": ["Kérem válasszon minden tételhez egy választ. A válszát részletesebben kifejteni a szakasz után megjelenő szövegdobozban tudja."]
+    },
+    {
+      "English": ["Go to previous section"],
+      "Hungarian": ["Ugrás az előző szakaszhoz"]
+    },
+    {
+      "English": ["Go to next section"],
+      "Hungarian": ["Ugrás a következő szakaszhoz"]
+    },
+    {
+      "English": ["Generate & Download Report"],
+      "Hungarian": ["Riport létrehozása és letöltése"]
+    },
+    {
+      "English": ["Format"],
+      "Hungarian": ["Formátum"]
+    },
+    {
+      "English": ["Preview"],
+      "Hungarian": ["Előnézet"]
+    },
+    {
+      "English": ["Show code"],
+      "Hungarian": ["Programkód megjelenítése"]
+    },
+    {
+      "English": ["Download"],
+      "Hungarian": ["Letöltés"]
+    },
+    {
+      "English": ["Click here to create and download report"],
+      "Hungarian": ["A transzparencia riport elkészítéséhez és letöltéséhez kattintson ide"]
+    },
+    {
+      "English": ["Generate Report"],
+      "Hungarian": ["Transzparencia riport készítése"]
+    },
+    {
+      "English": ["Code"],
+      "Hungarian": ["Programkód"]
+    },
+    {
+      "English": ["A report can be downloaded after all questions in each section have been answered."],
+      "Hungarian": ["A riport csak az összes kérdés megválaszolása után tölthető le."]
+    },
+    {
+      "English": ["About"],
+      "Hungarian": ["A checklistről"]
+    },
+    {
+      "English": ["What is CARE?"],
+      "Hungarian": ["Mi az a CARE?"]
+    },
+    {
+      "English": ["How to use it?"],
+      "Hungarian": ["Hogyan kell használni?"]
+    },
+    {
+      "English": ["The checklist refers to a single study of interest."],
+      "Hungarian": ["A checklist egyetlen tanulmányra vonatkozik."]
+    },
+    {
+      "English": ["Please respond to each checklist item. If necessary, you can provide an explanation at the end of each section."],
+      "Hungarian": ["Kérem válaszoljon a checklist minden elemére. Amennyiben szükséges, magyarázatot fűzhet a válaszához az adott szakasz végén."]
+    },
+    {
+      "English": ["When the question refers to your manuscript, this includes all supplementary materials and appendices that are relevant to the study of interest."],
+      "Hungarian": ["Amennyiben a kérdés a kéziratra vonatkozik, az magában foglal minden kiegészítő anyagot és függeléket, amely releváns lehet a kérdéses tanulmánnyal kapcsolatban."]
+    },
+    {
+      "English": ["After all the questions have been answered, you can generate a report for your study by pressing the button labeled GENERATE REPORT at the bottom of the page."],
+      "Hungarian": ["Riportját az összes kérdés megválaszolása után, a lap alján lévő 'Transzaprencia riport készítése' gomb megnyomásával készítheti el."]
+    },
+    {
+      "English": ["Save your report on your computer. Note that after you download your report, your responses on the checklist will not be saved by our webpage."],
+      "Hungarian": ["Mentse el riportját a számítógépére. Vegye figyelembe, hogy a riport letöltése után a weboldalunk nem menti el az ön által megadott válaszokat."]
+    },
+    {
+      "English": ["Upload your report to a public repository."],
+      "Hungarian": ["Töltse fel a riportját egy nyílvános adattárba."]
+    },
+    {
+      "English": ["You can cite the CARE as follows:"],
+      "Hungarian": ["A CARE-t a következőképpen hivatkozhatja:"]
+    },
+    {
+      "English": ["Feedback and recommendations for an update of the checklist can be provided here:"],
+      "Hungarian": ["Az ellenőrzőlista fejlesztéséhez visszajelzést és javaslatot itt tehet:"]
+    },
+    {
+      "English": ["Title of the Study"],
+      "Hungarian": ["A tanulmány címe"]
+    },
+    {
+      "English": ["All Authors [Given name(s) Surname;]"],
+      "Hungarian": ["Szerzők [Keresztnev(ek) vezetéknév;]"]
+    },
+    {
+      "English": ["Corresponding author's email address"],
+      "Hungarian": ["A kapcsolattartó szerző e-mail címe"]
+    },
+    {
+      "English": ["Link to Project Repository"],
+      "Hungarian": ["Link a projekt tárolási helyéhez"]
+    },
+    {
+      "English": ["Do the relevant regulations and policies allow the use of AI tools in your work?"],
+      "Hungarian": ["A témához illő jogszabályok és irányelvek megengedik a mesteréges intelligencia használatát a munkájában?"]
+    },
+    {
+      "English": ["Did you secure data privacy when using AI?"],
+      "Hungarian": ["Biztosította az adatok titkosítását a mesterséges intelligencia használata során?"]
+    },
+    {
+      "English": ["Are you accountable for all the outcome created with the help of AI?"],
+      "Hungarian": ["Felelősséggel tartozik minden a mesterséges intelligencia segítségével létrehozott eredmény iránt?"]
+    },
+    {
+      "English": ["Is the use of AI documented and reported according to the relevant transparency standards?"],
+      "Hungarian": ["A mesterséges intelligencia használata dokumentálva és közölve van az összes erre vonatkozó átláthatósági standard alapján?"]
+    },
+    {
+      "English": ["Did you have specific quality criteria for the outputs of your AI tool?"],
+      "Hungarian": ["Használt konkrét minőség kritériumokat a mesterséges intellgiencia által létrehozott eredményekre vonatkozóan?"]
+    },
+    {
+      "English": ["Did a human contributor assess the outcomes by the set quality criteria?"],
+      "Hungarian": ["Felülvizsgálta egy ember a mesterséges intelligencia által gyártott eredményeket  a minőségi kritériumok fényében?"]
+    },
+    {
+      "English": ["Did you make sure not using someone else’s work without appropriate accreditation?"],
+      "Hungarian": ["Biztosította, hogy nem használja más munkáját a megfelelő akkreditáció nélkül?"]
+    },
+    {
+      "English": ["Are you aware of the potential effects of your AI usage on the environment?"],
+      "Hungarian": ["Tisztában van a kutatása során használt mesterséges intelligencia használatának a környezetre gyakorolt hatásaival?"]
+    },
+    {
+      "English": ["Did you assess the potential biases and unfairness that can result from AI usage in your project?"],
+      "Hungarian": ["Felmérte a mesterséges intelligencia használatából eredő lehetséges torzításokat és igazságtalanságokat a projektben?"]
+    },
+    {
+      "English": ["Write your comments here..."],
+      "Hungarian": ["Ide írhatja a megjegyzéseit..."]
+    },
+    {
+      "English": ["Provide an explanation here..."],
+      "Hungarian": ["Itt részletezheti..."]
+    },
+    {
+      "English": ["Yes"],
+      "Hungarian": ["Igen"]
+    },
+    {
+      "English": ["No"],
+      "Hungarian": ["Nem"]
+    },
+    {
+      "English": ["N/A"],
+      "Hungarian": ["N/A"]
+    },
+    {
+      "English": ["Untitled"],
+      "Hungarian": ["Névtelen"]
+    },
+    {
+      "English": ["Transparency Report 1.0 (full, 36 items)"],
+      "Hungarian": ["Transparency Checklist 1.0 (hosszú, 36 tétel)"]
+    },
+    {
+      "English": ["Transparency Report 1.0 (short, 12 items)"],
+      "Hungarian": ["Transparency Checklist 1.0 (rövid, 12 tétel)"]
+    },
+    {
+      "English": ["Not answered"],
+      "Hungarian": ["Nincs válasz"]
+    },
+    {
+      "English": ["No comments."],
+      "Hungarian": ["Nincs hozzászólás."]
+    },
+    {
+      "English": ["This question needs to be answered."],
+      "Hungarian": ["Ezt a kérdést meg kell válaszolnia."]
+    },
+    {
+      "English": ["References"],
+      "Hungarian": ["Hivatkozások"]
+    }
+  ]
+}
