@@ -9,22 +9,7 @@
 #'   in order to reach their inputs from the server side of the modules.
 #' 
 renderSection <- function(section, id = NULL, answers = NULL){
-  # creates a tab ( can be changed to a fluidrow if we do not want tabs)
-  
-  tabPanel(
-    title = with_i18n(section$Name, section$Name), 
-    value = section$Value, 
-    icon  = tags$i(class = paste0("icon", section$Value, " fa fa-eye")),
-    br(),
-    # create the header and an initial info about the section
-    fluidRow(column(1),
-             column(10,
-                    if(!is.null(section$Label)) {
-                      strong(with_i18n(section$Label, section$Label))
-                      }
-                    ),
-             column(1)),
-
+  fluidRow(
     # render all fields within this section
     lapply(section$Questions, customField, id = id, answers = answers),
     
@@ -110,8 +95,7 @@ switchButtons <- function(ind, id = NULL, answers = NULL){
   # Add module id
   ind$Name <- shiny::NS(id, ind$Name)
   
-  # TODO: Add short and long transparency 
-  answerList <- TransparencyChecklistGolem:::long$answerList
+  answerList <- CARE:::checklist$answerList
   # if the AnswerType is specified in the answerList object (from .json), the button options should be rendered from 
   # those options
   # otherwise, the AnswerType is passed directly to the options

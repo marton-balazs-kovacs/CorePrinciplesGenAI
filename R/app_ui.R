@@ -44,16 +44,16 @@ app_ui <- function(request) {
       br(),
       tags$div(id = "scrollAnchor"), # for scrolling up
       # Show questions
-      #mod_sections_ui("sections", checklist = checklist),
+      mod_sections_ui("sections", checklist = checklist),
       # Switching between sections
       br(),
       br(),
       # Report menu (downloading)
-      #mod_report_ui("report"),
+      mod_report_ui("report"),
       br(),
       br(),
       # info modal
-      #mod_intro_ui("intro"),
+      mod_intro_ui("intro"),
       # Select language
       absolutePanel(
         mod_language_ui("language"),

@@ -36,8 +36,8 @@
         },
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_1_explain"
         },
         {
@@ -48,92 +48,92 @@
         },
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_2_explain"
         },
         {
-          "Type": "select",
+          "Type": "radio",
           "Label": "Are you accountable for all the outcome created with the help of AI?",
           "AnswerType": "Yes",
           "Name": "ind_3"
         },    
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_3_explain"
         },
         {
-          "Type": "select",
+          "Type": "radio",
           "Label": "Is the use of AI documented and reported according to the relevant transparency standards?",
           "AnswerType": "Yes",
           "Name": "ind_4"
         },    
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_4_explain"
         },
         {
-          "Type": "select",
+          "Type": "radio",
           "Label": "Did you have specific quality criteria for the outputs of your AI tool?",
           "AnswerType": "YesNa",
           "Name": "ind_5"
         },
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_5_explain"
         },
         {
-          "Type": "select",
+          "Type": "radio",
           "Label": "Did a human contributor assess the set quality criteria?",
           "AnswerType": "YesNa",
           "Name": "ind_6"
         },   
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_6_explain"
         },
         {
-          "Type": "select",
+          "Type": "radio",
           "Label": "Did you make sure not using someone else’s work without appropriate accreditation?",
           "AnswerType": "YesNa",
           "Name": "ind_7"
         },   
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_7_explain"
         },
         {
-          "Type": "select",
+          "Type": "radio",
           "Label": "Are you aware of the potential effects of your AI usage on the environment?",
           "AnswerType": "Yes",
           "Name": "ind_8"
         },
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_8_explain"
         },
         {
-          "Type": "select",
+          "Type": "radio",
           "Label": "Did you assess the potential biases and unfairness that can result from AI usage in your project?",
           "AnswerType": "YesNa",
           "Name": "ind_9"
         },
         {
           "Type": "textArea",
-          "Label": "Explain",
-          "AnswerType": "",
+          "Label": "",
+          "AnswerType": "Explain",
           "Name": "ind_9_explain"
         }
       ]
@@ -143,12 +143,6 @@
     "YesNo": {"Yes": "Yes", "No": "No", "N/A": "NA"},
     "YesNa": {"Yes": "Yes", "N/A": "NA"},
     "Yes": {"Yes": "Yes"},
-    "BeforeExplain": {"before any data were collected.": "before any data were collected",
-                      "after some data were collected, but before exploring the data.": "after some data were collected, but before exploring the data",
-                      "after all data were collected, but before exploring the data.": "after all data were collected, but before exploring the data",
-                      "after exploring the data, but before any statistical analyses were conducted.": "after exploring the data, but before any statistical analyses were conducted",
-                      "after some but not all statistical analyses were conducted.": "after some but not all statistical analyses were conducted", 
-                      "at another time, explain:": "at another time, explain" },
     "AlltoNone": {"All": "All", "Partially": "Partially", "None": "None", "N/A": "NA"},
     "YesExplain": {"Yes": "Yes", "Explain": "Explain"},
     "Explain": "Provide an explanation here..."

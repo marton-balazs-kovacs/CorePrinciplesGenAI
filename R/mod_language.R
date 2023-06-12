@@ -12,7 +12,7 @@ mod_language_ui <- function(id){
   # Read language list
   ## To use the local version of the language list uncomment the next line
   # language_list <- jsonlite::read_json(app_sys('app/www/language_list.json'))
-  language_list <- jsonlite::read_json("https://raw.githubusercontent.com/marton-balazs-kovacs/CARE/main/inst/app/www/language_list.json")
+  language_list <- jsonlite::read_json("https://raw.githubusercontent.com/marton-balazs-kovacs/CARE/master/inst/app/www/language_list.json")
   
   # Add select input
   tagList(
