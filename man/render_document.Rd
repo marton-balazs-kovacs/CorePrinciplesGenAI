@@ -13,8 +13,7 @@ composeRmd(
   headList = NULL,
   answerList = NULL,
   language_code = NULL,
-  save_as = "pdf",
-  short_checklist = NULL
+  save_as = "pdf"
 )
 
 composeSections(section, answers = NULL, language_code = NULL, save_as)

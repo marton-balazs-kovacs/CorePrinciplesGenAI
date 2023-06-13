@@ -77,6 +77,7 @@ mod_report_ui <- function(id){
       style = "transform: translate(-50%, +0%); z-index: 1000;"
       # Translate the tooltip
       ) |> with_i18n("Click here to create and download report", attribute = "title"),
+    verbatimTextOutput(NS(id, "test"))
   )
 }
     
@@ -86,6 +87,13 @@ mod_report_ui <- function(id){
 mod_report_server <- function(id, checklist, answers, language_code){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
+    
+    output$test <- renderText({
+      # result <- paste(answers(), collapse = ", ")
+      # result
+      # result <- paste(whichComplete(), collapse = ", ")
+      # result
+    })
     
     # checks which sections are complete
     whichComplete <- reactive({
@@ -100,6 +108,7 @@ mod_report_server <- function(id, checklist, answers, language_code){
     # checks whether the report is complete
     isDownloadable <- reactive({
       all(whichComplete())
+      # TODO: I guess isComplete checks completeness for each section we have to rewrite that code as well if we do not use sections to make the app easier to understand
     })
 
     #### Reactive animations ----
@@ -184,8 +193,7 @@ mod_report_server <- function(id, checklist, answers, language_code){
         headList = checklist$headList,
         answerList = checklist$answerList,
         save_as = input$save_as,
-        language_code = isolate(language_code()),
-        short_checklist = golem::get_golem_options("short_checklist")
+        language_code = isolate(language_code())
         )
     })
 
@@ -280,8 +288,7 @@ mod_report_server <- function(id, checklist, answers, language_code){
           headList = checklist$headList,
           answerList = checklist$answerList,
           save_as = input$save_as,
-          language_code = language_code(),
-          short_checklist = golem::get_golem_options("short_checklist")
+          language_code = language_code()
           )
 
         # print the Rmd document in the console (for debugging)

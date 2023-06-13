@@ -9,9 +9,9 @@
 NULL
 
 #' @rdname render_document
-composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, answerList = NULL, language_code = NULL, save_as = "pdf", short_checklist = NULL){
-  # Get subtitle based on short or long checklist
-  subtitle <- ifelse(short_checklist, "Transparency Report 1.0 (short, 12 items)", "Transparency Report 1.0 (full, 36 items)")
+composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, answerList = NULL, language_code = NULL, save_as = "pdf"){
+  # Get subtitle
+  subtitle <- "Criteria for AI-usage in REsearch (CARE)"
   # First, we create the YAML header of the rmd file (be carefully about indentation, can automatically generate another header which screws everything)
   headYaml <- stringr::str_glue(
 "---
@@ -73,12 +73,9 @@ link_label = server_translate("Link to Project Repository", language_code)
 #' @rdname render_document
 composeSections <- function(section, answers = NULL, language_code = NULL, save_as){
   # Creating a section
-  # \\section{&SectionName}
   # First, we sketch the outline of the section
   body <- stringr::str_glue(
 "
-
-## &SectionName
 
 **&SectionLabel**
 
@@ -93,7 +90,7 @@ save_as = save_as
   questions <- sapply(section$Questions, composeQuestions, answers = answers, language_code = language_code, save_as)
   
   # Fill in the section Name, the text, and the generated questions
-  body <- gsub("&SectionName", server_translate(section$Name, language_code), body)
+  # body <- gsub("&SectionName", server_translate(section$Name, language_code), body)
   if(is.null(section$Label) || section$Label == ""){
     body <- gsub("\\*\\*&SectionLabel\\*\\*", "", body)
   } else{
@@ -188,7 +185,7 @@ renderReferences <- function(language_code = NULL){
 out <- "
 ## &Refs
  
-Aczel, B., Szaszi, B., Sarafoglou, A. Kekecs, Z., Kucharský, Š., Benjamin, D., ... & Wagenmakers, E.-J. (2019). A consensus-based transparency checklist. *Nature Human Behaviour*, 1--3. doi:10.1038/s41562-019-0772-6
+REFERENCE GOES HERE
 "
 
   gsub("&Refs", server_translate("References", language_code), out)

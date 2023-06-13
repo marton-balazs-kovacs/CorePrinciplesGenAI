@@ -78,15 +78,26 @@ customButton <- function(ind, id = NULL, answers = NULL){
     )
     )
   } else { # when the item is a comment, show the commentary section as a standard textArea stretched over the width of the panel
-      conditionalPanel(condition = ind$Depends,
-                       fluidRow(column(1),
-                                column(10, br(), strong(with_i18n(ind$Label, ind$Label)), br(),
-                                       tags$style(type = "text/css", "textarea {width:80%}"),
-                                       tags$textarea(ifelse(is.null(answers[[ind$Name]]), "", answers[[ind$Name]]),
-                                                     id = shiny::NS(id, ind$Name), placeholder = ind$AnswerType,
-                                                     rows = 5, class = "form-control") |> with_i18n(ind$AnswerType, attribute = "placeholder")
-                                       ),
-                                column(1)))
+    answerList <- CARE:::checklist$answerList
+    # if the AnswerType is specified in the answerList object (from .json), the button options should be rendered from 
+    # those options
+    # otherwise, the AnswerType is passed directly to the options
+    if(ind$AnswerType %in% names(answerList)){
+      answerOptions <- answerList[[ind$AnswerType]]
+    } else{ 
+      answerOptions <- ind$AnswerType
+    }
+    # TODO: If the app gets picked up change this to a call to the switchButtons functions
+    # Also, validation/isCompleteQuestion has exclusion of "comment" from section list
+    conditionalPanel(condition = ind$Depends,
+                     fluidRow(column(1),
+                              column(10, br(), strong(with_i18n(ind$Label, ind$Label)), br(),
+                                     tags$style(type = "text/css", "textarea {width:80%}"),
+                                     tags$textarea(ifelse(is.null(answers[[ind$Name]]), "", answers[[ind$Name]]),
+                                                   id = shiny::NS(id, ind$Name), placeholder = answerOptions,
+                                                   rows = 5, class = "form-control") |> with_i18n(answerOptions, attribute = "placeholder")
+                                     ),
+                              column(1)))
   }
 }
 

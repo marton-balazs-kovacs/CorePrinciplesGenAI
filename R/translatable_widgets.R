@@ -62,10 +62,10 @@ radioButtonTranslatableOption <- function(choice, inputId) {
 }
 
 #' @description This function hard codes html for shiny::textArea with translatable placeholder
-# TODO: Implement translation placeholder with i18n
+# TODO: Check if placeholder translation is working
 textAreaInputTranslatable <- function(inputId, placeholder, rows) {
   div(class = "form-group shiny-input-container",
       tags$label(class = "control-label", id = inputId, `for` = inputId),
-      tags$textarea(class = "form-control", id = inputId, placeholder = placeholder, rows = rows)
+      tags$textarea(class = "form-control", id = inputId, placeholder = placeholder, rows = rows) |> with_i18n(placeholder, attribute = "placeholder")
   )
 }

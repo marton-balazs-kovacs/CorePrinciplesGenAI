@@ -126,7 +126,7 @@ get_language <- function(
 #' @param local character. Either a path or a URL to the JSON file containing the translations
 #' 
 #' @noRd
-server_translate <- function(i18n, language_code = NULL, local = "https://raw.githubusercontent.com/marton-balazs-kovacs/TransparencyChecklistGolem/master/inst/app/www/i18n_locales.json") {
+server_translate <- function(i18n, language_code = NULL, local = "https://raw.githubusercontent.com/marton-balazs-kovacs/CARE/master/inst/app/www/i18n_locales.json") {
   # Get the JSON containing localization
   # Use app_sys("app/www/i18n_locales.json") for loading the translations from a local file
   local <- rjson::fromJSON(file = local)

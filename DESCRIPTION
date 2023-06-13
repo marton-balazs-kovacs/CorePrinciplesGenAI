@@ -12,6 +12,7 @@ Imports:
     golem (>= 0.4.1),
     knitr,
     markdown,
+    pkgload,
     purrr,
     RCurl,
     rjson,
