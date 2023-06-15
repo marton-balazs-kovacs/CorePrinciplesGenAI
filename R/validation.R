@@ -66,9 +66,8 @@ isComplete <- function(answers = NULL, sectionsList = NULL, headList = NULL){
 #' Validate responses to questions
 isCompleteQuestion <- function(question, answers){
   
-  # if it's not even a question (comment, text), skip to another question
-  # if a comment is supposed to be mandatory, change Type = 'comment' to Type = 'textArea' in .json
-  if(question$Type %in% c("comment", "text")){
+  # if it's not mandatory to respond, skip to another question
+  if(!question$Mandatory){
     return(TRUE)
   }
   

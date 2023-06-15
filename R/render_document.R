@@ -2,7 +2,7 @@
 #' 
 #' @description 
 #' These functions help to generate the output rmarkdown file containing the filled out
-#' Transparency Checklist as a string without a template on the fly.
+#' CARE as a string without a template on the fly.
 #'
 #' @name render_document
 #' @aliases NULL
@@ -74,6 +74,7 @@ link_label = server_translate("Link to Project Repository", language_code)
 composeSections <- function(section, answers = NULL, language_code = NULL, save_as){
   # Creating a section
   # First, we sketch the outline of the section
+  # TODO: changed \\newpage to \\n check if it working and check why I had to modify it
   body <- stringr::str_glue(
 "
 
@@ -82,7 +83,7 @@ composeSections <- function(section, answers = NULL, language_code = NULL, save_
 
 &Questions
 
-{ifelse(save_as == 'pdf', '\\newpage', '***')}
+{ifelse(save_as == 'pdf', '\\n', '***')}
 ",
 save_as = save_as
 )
@@ -114,10 +115,11 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
   show <- TRUE
   
   # check whether the section is supposed to be shown
-  if(!is.null(question$Depends)){
-    show <- gsub(".ind_", "answers$ind_", question$Depends)
-    show <- eval(parse(text = show))
-  }
+  # Current dependency arsing does not work come up with a new method if gets picked up
+  # if(!is.null(question$Depends)){
+  #   show <- gsub(".ind_", "answers$ind_", question$Depends)
+  #   show <- eval(parse(text = show))
+  # }
   
   # if the question is not shown, return empty space (will screw up the appearance of the rmd file, but not the pdf)
   if(!show){
@@ -129,14 +131,9 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
 &Label &Answer
 "
   
-  
-  # if the question is "Explain" -- additional comment following some question, render it as a comment
-  if(question$Label == "Explain") {
-    question$Type <- "comment"
-  }
- 
+  # if the AnswerType is "Explain" -- additional comment following some question, render it as a comment
   # make answers bold, but if it is a comment, show it as a quote
-  if( !(question$Type %in% c("comment", "text"))){
+  if( !(question$AnswerType == "Explain") ){
     # If the response is NA we do not translate it
     resp <- ifelse(
       answers[[question$Name]] == "NA",
@@ -146,7 +143,7 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
     
     # Change syntax based on output format
     answer <- stringr::str_glue(" {ifelse(save_as == 'pdf', '&escape&textbf{', '**')}{resp}{ifelse(save_as == 'pdf', '}', '**')} ")
-  } else if(question$Type == "comment"){
+  } else if( question$AnswerType == "Explain" ){
     answer <- ifelse(answers[[question$Name]] == "", server_translate("No comments.", language_code), answers[[question$Name]]) # If the comment box is empty
     answer <- paste0("\n\n> ", answer)
   } else{
@@ -155,16 +152,16 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
   
 
   # layout Labels
-  if(!is.null(question$href)){
+  if( !is.null(question$href) ){
     question$Label <- paste0(question$Label, "[", question$href, "](", question$href, ")")
   }
-  if(!is.null(question$LabelEnd)){
+  if( !is.null(question$LabelEnd) ){
     question$Label <- paste0(question$Label, question$LabelEnd)
   }
   
-  if( !(question$Type %in% c("comment", "text"))){
+  if( !(question$AnswerType == "Explain") ){
     label <- stringr::str_glue(" {server_translate(question$Label, language_code)} {ifelse(save_as == 'pdf', '&escape&hfill', '')}")
-  } else if(question$Type == "text" || (question$Type == "comment" && question$Label != "Explain")){
+  } else if( question$AnswerType == "Explain" ){
     if(question$Label == ""){
       label <- paste0("\n")
     } else{

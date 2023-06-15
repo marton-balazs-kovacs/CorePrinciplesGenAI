@@ -32,109 +32,136 @@
           "Type": "radio",
           "Label": "Do the relevant regulations and policies allow the use of AI tools in your work?",
           "AnswerType": "Yes",
-          "Name": "ind_1"
+          "Name": "ind_1",
+          "Mandatory": true
         },
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_1_explain"
+          "Name": "ind_1_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_1_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Did you secure data privacy when using AI?",
           "AnswerType": "YesNa",
-          "Name": "ind_2"
+          "Name": "ind_2",
+          "Mandatory": true
         },
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_2_explain"
+          "Name": "ind_2_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_2_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Are you accountable for all the outcome created with the help of AI?",
           "AnswerType": "Yes",
-          "Name": "ind_3"
+          "Name": "ind_3",
+          "Mandatory": true
         },    
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_3_explain"
+          "Name": "ind_3_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_3_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Is the use of AI documented and reported according to the relevant transparency standards?",
           "AnswerType": "Yes",
-          "Name": "ind_4"
+          "Name": "ind_4",
+          "Mandatory": true
         },    
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_4_explain"
+          "Name": "ind_4_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_4_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Did you have specific quality criteria for the outputs of your AI tool?",
           "AnswerType": "YesNa",
-          "Name": "ind_5"
+          "Name": "ind_5",
+          "Mandatory": true
         },
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_5_explain"
+          "Name": "ind_5_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_5_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Did a human contributor assess the outcomes by the set quality criteria?",
           "AnswerType": "YesNa",
-          "Name": "ind_6"
+          "Name": "ind_6",
+          "Mandatory": true
         },   
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_6_explain"
+          "Name": "ind_6_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_6_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Did you make sure not using someone else’s work without appropriate accreditation?",
           "AnswerType": "YesNa",
-          "Name": "ind_7"
+          "Name": "ind_7",
+          "Mandatory": true
         },   
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_7_explain"
+          "Name": "ind_7_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_7_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Are you aware of the potential effects of your AI usage on the environment?",
           "AnswerType": "Yes",
-          "Name": "ind_8"
+          "Name": "ind_8",
+          "Mandatory": true
         },
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_8_explain"
+          "Name": "ind_8_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_8_button'] % 2 != 0"
         },
         {
           "Type": "radio",
           "Label": "Did you assess the potential biases and unfairness that can result from AI usage in your project?",
           "AnswerType": "YesNa",
-          "Name": "ind_9"
+          "Name": "ind_9",
+          "Mandatory": true
         },
         {
-          "Type": "comment",
+          "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
-          "Name": "ind_9_explain"
+          "Name": "ind_9_explain",
+          "Mandatory": false,
+          "Depends": "input['sections-ind_9_button'] % 2 != 0"
         }
       ]
     }

@@ -88,12 +88,12 @@ mod_report_server <- function(id, checklist, answers, language_code){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
     
-    output$test <- renderText({
+    # output$test <- renderText({
       # result <- paste(answers(), collapse = ", ")
       # result
       # result <- paste(whichComplete(), collapse = ", ")
       # result
-    })
+    # })
     
     # checks which sections are complete
     whichComplete <- reactive({
@@ -273,7 +273,7 @@ mod_report_server <- function(id, checklist, answers, language_code){
 
       filename = function() {
         save_as <- ifelse(input$save_as == "word", "doc", input$save_as)
-        paste("Transparency Report", save_as, sep = ".")
+        paste("CARE Report", save_as, sep = ".")
       },
 
       content = function(file) {
