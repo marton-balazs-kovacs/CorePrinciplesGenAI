@@ -30,6 +30,18 @@ app_ui <- function(request) {
         windowTitle = "CARE 1.0"
       ),
       br(),
+      # Subtitle
+      column(12,
+             tags$h2(with_i18n("A Comprehensive Guideline & Checklist ", NULL)),
+             align = "center"),
+      br(),
+      # About panel
+      fluidRow(
+        column(1),
+        column(10,
+               mod_intro_ui("intro")),
+        column(1)),
+      br(),
       # The header (basic information about the paper and authors)
       mod_header_ui("header", checklist = checklist),
       # Show initial instructions
@@ -53,8 +65,6 @@ app_ui <- function(request) {
       mod_report_ui("report"),
       br(),
       br(),
-      # Info modal
-      mod_intro_ui("intro"),
       # Select language
       if (translation_enabled) {
         absolutePanel(

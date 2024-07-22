@@ -297,7 +297,7 @@ mod_report_server <- function(id, checklist, answers, language_code){
           )
 
         # print the Rmd document in the console (for debugging)
-        #writeLines(RmdFile)
+        # writeLines(RmdFile)
 
         # store the string as a temporary report.Rmd file
         tempReport <- file.path(tempdir(), "report.Rmd")

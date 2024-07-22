@@ -31,12 +31,14 @@
         {
           "Type": "text",
           "Label": "Regulations",
-          "Name": "ind_1_principle"
+          "Name": "ind_1_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
           "Label": "Ensure that your AI usage and application follow the applicable institutional, national, international, and publishers' regulations and policies. In addition, identify and address potential ethical risks associated with your AI application in accordance with your ethical review board.",
-          "Name": "ind_1_preparation"
+          "Name": "ind_1_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -48,7 +50,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_1_explain",
           "Mandatory": false,
           "Depends": ".ind_1 == 'Yes'"
@@ -64,12 +66,14 @@
         {
           "Type": "text",
           "Label": "Data security",
-          "Name": "ind_2_principle"
+          "Name": "ind_2_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
           "Label": "To prevent compromising private or sensitive information when working with AI, you should (i) anonymize or pseudonymize all input data, (ii) opt out of data usage and storage in the AI application(s) where possible, and (iii) consult an expert on the topic of data security if needed. Whenever relevant, inform the participants how their data will be used in the AI application.",
-          "Name": "ind_2_preparation"
+          "Name": "ind_2_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -81,7 +85,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_2_explain",
           "Mandatory": false,
           "Depends": ".ind_2 == 'Yes'"
@@ -97,12 +101,20 @@
         {
           "Type": "text",
           "Label": "Quality Control",
-          "Name": "ind_3_principle"
+          "Name": "ind_3_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
-          "Label": "Quality Criteria\nHave predefined verifiable criteria for correctness, reasoning, relevance, and professional quality.",
-          "Name": "ind_3_preparation"
+          "Label": "Quality Criteria",
+          "Name": "ind_3_subprinciple",
+          "Style": "font-weight: bold; font-style: italic; font-size: 1em;"
+        },
+        {
+          "Type": "text",
+          "Label": "Have predefined verifiable criteria for correctness, reasoning, relevance, and professional quality.",
+          "Name": "ind_3_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -114,7 +126,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_3_explain",
           "Mandatory": false,
           "Depends": ".ind_3 == 'Yes'"
@@ -129,8 +141,15 @@
         },
         {
           "Type": "text",
-          "Label": "Quality Checks\nA human contributor should assess whether the AI-generated outputs or their modified version satisfy previously set quality criteria.\nCorrectness: Is the output accurate and correct according to the set quality criteria?\nReasoning: Does the output make logical sense? Is it free of contradictions?\nRelevance: Is the output relevant, comprehensive, and up-to-date according to human expertise?\nProfessional quality: Does the output satisfy all the other set quality expectations?",
-          "Name": "ind_4_preparation"
+          "Label": "Quality Checks",
+          "Name": "ind_4_subprinciple",
+          "Style": "font-weight: bold; font-style: italic; font-size: 1em;"
+        },
+        {
+          "Type": "text",
+          "Label": "A human contributor should assess whether the AI-generated outputs or their modified version satisfy previously set quality criteria.<br><b>Correctness:</b> Is the output accurate and correct according to the set quality criteria?<br><b>Reasoning:</b> Does the output make logical sense? Is it free of contradictions?<br><b>Relevance:</b> Is the output relevant, comprehensive, and up-to-date according to human expertise?<br><b>Professional quality:</b> Does the output satisfy all the other set quality expectations?",
+          "Name": "ind_4_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -142,7 +161,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_4_explain",
           "Mandatory": false,
           "Depends": ".ind_4 == 'Yes'"
@@ -158,12 +177,14 @@
         {
           "Type": "text",
           "Label": "Originality",
-          "Name": "ind_5_principle"
+          "Name": "ind_5_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
           "Label": "Ensure that all components of the work, including text, data, figures, and images, are free from plagiarism in contexts where concerns of plagiarism apply. Make sure that the work of other parties is fully acknowledged and used in compliance with academic integrity.",
-          "Name": "ind_5_preparation"
+          "Name": "ind_5_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -175,7 +196,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_5_explain",
           "Mandatory": false,
           "Depends": ".ind_5 == 'Yes'"
@@ -191,12 +212,14 @@
         {
           "Type": "text",
           "Label": "Bias Mitigation",
-          "Name": "ind_6_principle"
+          "Name": "ind_6_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
           "Label": "AI can create random or systematic biases. Ensure you systematically check whether your AI outputs reflect or perpetuate existing biases, power structures, stereotypes or biased consensus within society or academia, or introduce novel biases. Mitigate these biases where possible and relevant.",
-          "Name": "ind_6_preparation"
+          "Name": "ind_6_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -208,7 +231,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_6_explain",
           "Mandatory": false,
           "Depends": ".ind_6 == 'Yes'"
@@ -224,12 +247,14 @@
         {
           "Type": "text",
           "Label": "Accountability",
-          "Name": "ind_7_principle"
+          "Name": "ind_7_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
           "Label": "Make sure that you understand the AI output you are using and can explain it, so that you can accept accountability for its quality, originality, and fairness.",
-          "Name": "ind_7_preparation"
+          "Name": "ind_7_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -241,7 +266,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_7_explain",
           "Mandatory": false,
           "Depends": ".ind_7 == 'Yes'"
@@ -257,12 +282,14 @@
         {
           "Type": "text",
           "Label": "Transparency",
-          "Name": "ind_8_principle"
+          "Name": "ind_8_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
           "Label": "Make sure that the process of using AI tools and their input to your work is documented and clearly communicated to the reader. Be clear about which tools and versions were used.",
-          "Name": "ind_8_preparation"
+          "Name": "ind_8_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -274,7 +301,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_8_explain",
           "Mandatory": false,
           "Depends": ".ind_8 == 'Yes'"
@@ -290,12 +317,14 @@
         {
           "Type": "text",
           "Label": "Broader Impact",
-          "Name": "ind_9_principle"
+          "Name": "ind_9_principle",
+          "Style": "font-weight: bold; font-size: 1.17em;"
         },
         {
           "Type": "text",
           "Label": "Be aware of the environmental and societal effects of AI usage and consider human labor as an alternative. Also, be aware that replacing human labor affects coworkers, juniors, or researchers of marginalized backgrounds who could be involved in and profit from your research.",
-          "Name": "ind_9_preparation"
+          "Name": "ind_9_preparation",
+          "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
@@ -307,7 +336,7 @@
         {
           "Type": "textArea",
           "Label": "",
-          "AnswerType": "Explain",
+          "AnswerType": "OptionalComments",
           "Name": "ind_9_explain",
           "Mandatory": false,
           "Depends": ".ind_9 == 'Yes'"
@@ -329,6 +358,7 @@
     "Yes": {"Yes": "Yes"},
     "AlltoNone": {"All": "All", "Partially": "Partially", "None": "None", "N/A": "NA"},
     "YesExplain": {"Yes": "Yes", "Explain": "Explain"},
-    "Explain": "Provide an explanation here..."
+    "Explain": "Provide an explanation here...",
+    "OptionalComments": "Optional comments"
   }
 }    

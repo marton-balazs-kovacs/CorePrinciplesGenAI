@@ -22,11 +22,16 @@ renderSection <- function(section, id = NULL, answers = NULL){
 customField <- function(ind, id = NULL, answers = NULL){
   # if the input is not a question, it is assumed that it is some guidance text in between the items
   if(ind$Type == "text"){
-    
+    # Get styling of labels
+    if(!is.null(ind$Style)) {
+      style <- ind$Style
+    } else {
+      style <- "font-weight: bold;"
+    }
     # the guidance text can itself be conditional
     if(is.null(ind$Depends)){
       fluidRow(column(1),
-               column(10, br(), strong(ind$Label)),
+               column(10, br(), tags$span(HTML(ind$Label), style = style)),
                column(1))
     } else {
       # Add module id
@@ -34,7 +39,7 @@ customField <- function(ind, id = NULL, answers = NULL){
       
       conditionalPanel(condition = depends,
                        fluidRow(column(1), 
-                                column(10, br(), strong(ind$Label)),
+                                column(10, br(), tags$span(HTML(ind$Label), style = style)),
                                 column(1))
                        )
     }
@@ -44,7 +49,13 @@ customField <- function(ind, id = NULL, answers = NULL){
 }
 
 customButton <- function(ind, id = NULL, answers = NULL){
-    
+  # Get styling of labels
+  if(!is.null(ind$Style)) {
+    style <- ind$Style
+  } else {
+    style <- "font-weight: bold;"
+  }
+  
   # Always display unconditional items
   if (is.null(ind$Depends)) {
     ind$Depends <- "true"
@@ -62,15 +73,15 @@ customButton <- function(ind, id = NULL, answers = NULL){
         # Left offset margin
         column(1),
         # Question label
-        column(6,
+        column(8,
                br(),
-               with_i18n(ind$Label, ind$Label)
+               tags$span(with_i18n(ind$Label, ind$Label), style = "font-weight: bold;")
         ),
               #a(ind$href, href = ind$href, target = "_blank"),
               #ind$LabelEnd), # this makes the buttons appear horizontally aligned
               # do not add ns here as it would duplicate ns tag in consequent calls
         # Answer buttons
-        column(3,
+        column(1,
                switchButtons(ind, id = id, answers = answers)
         ),
         # Icon for opening textbox for additional explanation

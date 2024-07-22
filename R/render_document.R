@@ -11,7 +11,9 @@ NULL
 #' @rdname render_document
 composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, answerList = NULL, language_code = NULL, save_as = "pdf"){
   # Get subtitle
-  subtitle <- "Criteria for AI-usage in REsearch (CARE)"
+  subtitle <- "Checklist for responsible AI usage in research - Checklist Report"
+  # Description of CARE
+  description <- "The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research."
   # First, we create the YAML header of the rmd file (be carefully about indentation, can automatically generate another header which screws everything)
   headYaml <- stringr::str_glue(
 "---
@@ -41,12 +43,16 @@ babel-lang: chinese-simplified
 {link_label}: [{link_to_rep}]({link_to_rep})
 ",
 save_as = save_as,
-study_title = ifelse(answers$studyTitle == "", server_translate("Untitled", language_code), answers$studyTitle),
+study_title = ifelse(is.null(answers$studyTitle) || answers$studyTitle == "", 
+                     server_translate("Untitled", language_code), answers$studyTitle),
 sub_title = server_translate(subtitle, language_code),
-author_names =  answers$authorNames,
-corresponding_email = answers$correspondingEmail,
-link_to_rep = answers$linkToRepository,
-language_code = language_code,
+author_names =  ifelse(is.null(answers$authorNames) || answers$authorNames == "", 
+                       server_translate("Anonymous", language_code), answers$authorNames),
+corresponding_email =  ifelse(is.null(answers$correspondingEmail) || answers$correspondingEmail == "", 
+                              "noemail@example.com", answers$correspondingEmail),
+link_to_rep = ifelse(is.null(answers$linkToRepository) || answers$linkToRepository == "", 
+                    "#", answers$linkToRepository),
+language_code = ifelse(is.null(language_code), "en", language_code),
 corr_author_label = server_translate("Corresponding author's email address", language_code),
 link_label = server_translate("Link to Project Repository", language_code)
 )
@@ -61,11 +67,12 @@ link_label = server_translate("Link to Project Repository", language_code)
   sections <- sapply(sectionsList, composeSections, answers = answers, language_code = language_code, save_as = save_as)
   
   references <- renderReferences(language_code = language_code)
+  
   # combine everything together
-  rmd <- paste(c(headYaml, sections, references), collapse = "\n")
+  rmd <- paste(c(headYaml, "\n", description, "\n---\n", sections, references), collapse = "\n")
   
   # print created document for testing purposes
-  # print(rmd)
+  print(rmd)
   
   rmd
 }
@@ -133,7 +140,7 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
   
   # if the AnswerType is "Explain" -- additional comment following some question, render it as a comment
   # make answers bold, but if it is a comment, show it as a quote
-  if(!is.null(question$AnswerType) && !(question$AnswerType == "Explain") ){
+  if(!is.null(question$AnswerType) && !(question$AnswerType %in% c("Explain", "OptionalComments")) ){
     # If the response is NA we do not translate it
     resp <- ifelse(
       answers[[question$Name]] == "NA",
@@ -143,7 +150,7 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
     
     # Change syntax based on output format
     answer <- stringr::str_glue(" {ifelse(save_as == 'pdf', '&escape&textbf{', '**')}{resp}{ifelse(save_as == 'pdf', '}', '**')} ")
-  } else if(!is.null(question$AnswerType) && question$AnswerType == "Explain" ){
+  } else if(!is.null(question$AnswerType) && question$AnswerType %in% c("Explain", "OptionalComments") ){
     answer <- ifelse(answers[[question$Name]] == "", server_translate("No comments.", language_code), answers[[question$Name]]) # If the comment box is empty
     answer <- paste0("\n\n> ", answer)
   } else{
@@ -159,9 +166,9 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
     question$Label <- paste0(question$Label, question$LabelEnd)
   }
   
-  if( !is.null(question$AnswerType) && !(question$AnswerType == "Explain") ){
+  if( !is.null(question$AnswerType) && !(question$AnswerType %in% c("Explain", "OptionalComments")) ){
     label <- stringr::str_glue(" {server_translate(question$Label, language_code)} {ifelse(save_as == 'pdf', '&escape&hfill', '')}")
-  } else if(!is.null(question$AnswerType) &&  question$AnswerType == "Explain" ){
+  } else if(!is.null(question$AnswerType) &&  question$AnswerType %in% c("Explain", "OptionalComments") ){
     if(question$Label == ""){
       label <- paste0("\n")
     } else{
@@ -185,5 +192,5 @@ out <- "
 REFERENCE GOES HERE
 "
 
-  gsub("&Refs", server_translate("References", language_code), out)
+  gsub("&Refs", server_translate("Source", language_code), out)
 }

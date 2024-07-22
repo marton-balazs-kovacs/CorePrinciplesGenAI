@@ -22,9 +22,6 @@ app_server <- function(input, output, session) {
     language_code <- reactive(NULL)
   }
   
-  # Intro
-  mod_intro_server("intro")
-  
   # Generate report
   mod_report_server(
     "report",
