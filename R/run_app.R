@@ -12,6 +12,7 @@ run_app <- function(
   options = list(),
   enableBookmarking = NULL,
   uiPattern = "/",
+  translation_enabled = FALSE,
   ...
 ) {
   with_golem_options(
@@ -24,7 +25,8 @@ run_app <- function(
       uiPattern = uiPattern
     ),
     golem_opts = list(
-      checklist = CARE:::checklist
+      checklist = CARE:::checklist,
+      translation_enabled = translation_enabled # Change this to TRUE if you would like to enable translations
     )
   )
 }

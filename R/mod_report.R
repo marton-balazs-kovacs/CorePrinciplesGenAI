@@ -16,7 +16,12 @@ mod_report_ui <- function(id){
         shinyWidgets::pickerInput(
           inputId = NS(id, "save_as"),
           label = "Format",
-          choices = c("pdf", "html", "word", "rtf"),
+          choices = c(
+            # "pdf", 
+            "html",
+            "word", 
+            "rtf"
+            ),
           multiple = FALSE, width = 'auto', inline = FALSE
           ) |> with_i18n(
             "Format",

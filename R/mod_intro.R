@@ -31,27 +31,31 @@ mod_intro_server <- function(id){
       modalDialog(
         withTags({
           div(id = "intro-modal-content",
-            h3("What is CARE?") |> with_i18n(NULL),
+            h3("Criteria for AI-usage in Research") |> with_i18n(NULL),
             br(),
-            h3("How to use it?") |> with_i18n(NULL),
-            ul(
-              li("The checklist refers to a single study of interest.") |> with_i18n(NULL),
-              li("Please respond to each checklist item. If necessary, you can provide an explanation at the end of each section.") |> with_i18n(NULL),
-              li("When the question refers to your manuscript, this includes all supplementary materials and appendices that are relevant to the study of interest.") |> with_i18n(NULL),
-              li("After all the questions have been answered, you can generate a report for your study by pressing the button labeled GENERATE REPORT at the bottom of the page.") |> with_i18n(NULL),
-              li("Save your report on your computer. Note that after you download your report, your responses on the checklist will not be saved by our webpage.") |> with_i18n(NULL),
-              li("Upload your report to a public repository.") |> with_i18n(NULL),
+            h4("A Comprehensive Guideline & Checklist ") |> with_i18n(NULL),
+            br(),
+            p("The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research.") |> with_i18n(NULL),
+            br(),
+            h3("Instruction") |> with_i18n(NULL),
+            p("Please fill out the checklist on behalf of your co-authors. It's important that before using any AI tools in your research, that you:") |> with_i18n(NULL),
+            ol(
+              li("Become and remain well-informed about the regulations of AI usage that are relevant to your study, including data security, transparency, and originality;") |> with_i18n(NULL),
+              li("Gather sufficient knowledge and experience such that you are able to use your AI tool professionally;") |> with_i18n(NULL),
+              li("Set quality criteria and quality control procedures for your AI-assisted outcomes;") |> with_i18n(NULL),
+              li("Consult your co-authors and ensure they are aware of and comply with the requirements for responsible AI usage listed in this checklist.") |> with_i18n(NULL),
+              li("Fill out all the questions. If your answer is ‘no’ you are required to provide sufficient explanation to complete the checklist. After filling out the checklist, you can generate the report.") |> with_i18n(NULL),
             ),
             br(),
-            span("You can cite the CARE as follows:") |> with_i18n(NULL),
-            hr(),
-            p(with_i18n("Feedback and recommendations for an update of the checklist can be provided here:", NULL)),
-            br(),
-            a(
-              img(src = "www/GitHub-Mark-32px.png"),
-              href = "https://github.com/BalazsAczel/TransparencyChecklist",
-              target = "_blank"
-            )
+            span("A detailed explanation of the checklist is available in the publication (REF).") |> with_i18n(NULL),
+            # hr(),
+            # p(with_i18n("Feedback and recommendations for an update of the checklist can be provided here:", NULL)),
+            # br(),
+            # a(
+            #   img(src = "www/GitHub-Mark-32px.png"),
+            #   href = "https://github.com/BalazsAczel/TransparencyChecklist",
+            #   target = "_blank"
+            # )
           )
         }),
         easyClose = TRUE,

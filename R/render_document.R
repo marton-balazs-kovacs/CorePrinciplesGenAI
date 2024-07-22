@@ -116,10 +116,10 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
   
   # check whether the section is supposed to be shown
   # Current dependency arsing does not work come up with a new method if gets picked up
-  # if(!is.null(question$Depends)){
-  #   show <- gsub(".ind_", "answers$ind_", question$Depends)
-  #   show <- eval(parse(text = show))
-  # }
+  if(!is.null(question$Depends)){
+    show <- gsub(".ind_", "answers$ind_", question$Depends)
+    show <- eval(parse(text = show))
+  }
   
   # if the question is not shown, return empty space (will screw up the appearance of the rmd file, but not the pdf)
   if(!show){
@@ -133,7 +133,7 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
   
   # if the AnswerType is "Explain" -- additional comment following some question, render it as a comment
   # make answers bold, but if it is a comment, show it as a quote
-  if( !(question$AnswerType == "Explain") ){
+  if(!is.null(question$AnswerType) && !(question$AnswerType == "Explain") ){
     # If the response is NA we do not translate it
     resp <- ifelse(
       answers[[question$Name]] == "NA",
@@ -143,7 +143,7 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
     
     # Change syntax based on output format
     answer <- stringr::str_glue(" {ifelse(save_as == 'pdf', '&escape&textbf{', '**')}{resp}{ifelse(save_as == 'pdf', '}', '**')} ")
-  } else if( question$AnswerType == "Explain" ){
+  } else if(!is.null(question$AnswerType) && question$AnswerType == "Explain" ){
     answer <- ifelse(answers[[question$Name]] == "", server_translate("No comments.", language_code), answers[[question$Name]]) # If the comment box is empty
     answer <- paste0("\n\n> ", answer)
   } else{
@@ -159,9 +159,9 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
     question$Label <- paste0(question$Label, question$LabelEnd)
   }
   
-  if( !(question$AnswerType == "Explain") ){
+  if( !is.null(question$AnswerType) && !(question$AnswerType == "Explain") ){
     label <- stringr::str_glue(" {server_translate(question$Label, language_code)} {ifelse(save_as == 'pdf', '&escape&hfill', '')}")
-  } else if( question$AnswerType == "Explain" ){
+  } else if(!is.null(question$AnswerType) &&  question$AnswerType == "Explain" ){
     if(question$Label == ""){
       label <- paste0("\n")
     } else{

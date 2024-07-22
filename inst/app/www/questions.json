@@ -25,13 +25,23 @@
   }
   ],
   "Sections" : {
-    "Valami": {
-      "Name": "Valami",
+    "Checklist": {
+      "Name": "Checklist",
       "Questions": [
         {
+          "Type": "text",
+          "Label": "Regulations",
+          "Name": "ind_1_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "Ensure that your AI usage and application follow the applicable institutional, national, international, and publishers' regulations and policies. In addition, identify and address potential ethical risks associated with your AI application in accordance with your ethical review board.",
+          "Name": "ind_1_preparation"
+        },
+        {
           "Type": "radio",
-          "Label": "Do the relevant regulations and policies allow the use of AI tools in your work?",
-          "AnswerType": "Yes",
+          "Label": "Do the applicable regulations and policies allow for the use of AI tools in research in your work?",
+          "AnswerType": "YesNo",
           "Name": "ind_1",
           "Mandatory": true
         },
@@ -41,12 +51,30 @@
           "AnswerType": "Explain",
           "Name": "ind_1_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_1_button'] % 2 != 0"
+          "Depends": ".ind_1 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_1_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_1 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Data security",
+          "Name": "ind_2_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "To prevent compromising private or sensitive information when working with AI, you should (i) anonymize or pseudonymize all input data, (ii) opt out of data usage and storage in the AI application(s) where possible, and (iii) consult an expert on the topic of data security if needed. Whenever relevant, inform the participants how their data will be used in the AI application.",
+          "Name": "ind_2_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Did you secure data privacy when using AI?",
-          "AnswerType": "YesNa",
+          "Label": "Is your research using AI compatible with data privacy and security regulations?",
+          "AnswerType": "YesNo",
           "Name": "ind_2",
           "Mandatory": true
         },
@@ -56,42 +84,91 @@
           "AnswerType": "Explain",
           "Name": "ind_2_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_2_button'] % 2 != 0"
+          "Depends": ".ind_2 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_2_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_2 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Quality Control",
+          "Name": "ind_3_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "Quality Criteria\nHave predefined verifiable criteria for correctness, reasoning, relevance, and professional quality.",
+          "Name": "ind_3_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Are you accountable for all the outcome created with the help of AI?",
-          "AnswerType": "Yes",
+          "Label": "Do you have specific quality criteria for the outputs of your AI tool?",
+          "AnswerType": "YesNo",
           "Name": "ind_3",
           "Mandatory": true
-        },    
+        },
         {
           "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
           "Name": "ind_3_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_3_button'] % 2 != 0"
+          "Depends": ".ind_3 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_3_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_3 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Quality Checks\nA human contributor should assess whether the AI-generated outputs or their modified version satisfy previously set quality criteria.\nCorrectness: Is the output accurate and correct according to the set quality criteria?\nReasoning: Does the output make logical sense? Is it free of contradictions?\nRelevance: Is the output relevant, comprehensive, and up-to-date according to human expertise?\nProfessional quality: Does the output satisfy all the other set quality expectations?",
+          "Name": "ind_4_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Is the use of AI documented and reported according to the relevant transparency standards?",
-          "AnswerType": "Yes",
+          "Label": "Did a human contributor assess the outcomes by the set quality criteria and checks?",
+          "AnswerType": "YesNo",
           "Name": "ind_4",
           "Mandatory": true
-        },    
+        },
         {
           "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
           "Name": "ind_4_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_4_button'] % 2 != 0"
+          "Depends": ".ind_4 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_4_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_4 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Originality",
+          "Name": "ind_5_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "Ensure that all components of the work, including text, data, figures, and images, are free from plagiarism in contexts where concerns of plagiarism apply. Make sure that the work of other parties is fully acknowledged and used in compliance with academic integrity.",
+          "Name": "ind_5_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Did you have specific quality criteria for the outputs of your AI tool?",
-          "AnswerType": "YesNa",
+          "Label": "Did you make sure not to use someone else’s work without appropriate accreditation?",
+          "AnswerType": "YesNo",
           "Name": "ind_5",
           "Mandatory": true
         },
@@ -101,42 +178,96 @@
           "AnswerType": "Explain",
           "Name": "ind_5_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_5_button'] % 2 != 0"
+          "Depends": ".ind_5 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_5_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_5 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Bias Mitigation",
+          "Name": "ind_6_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "AI can create random or systematic biases. Ensure you systematically check whether your AI outputs reflect or perpetuate existing biases, power structures, stereotypes or biased consensus within society or academia, or introduce novel biases. Mitigate these biases where possible and relevant.",
+          "Name": "ind_6_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Did a human contributor assess the outcomes by the set quality criteria?",
-          "AnswerType": "YesNa",
+          "Label": "Did you try to make sure that your project does not create, reflect or perpetuate biases or unfairness due to  AI usage?",
+          "AnswerType": "YesNo",
           "Name": "ind_6",
           "Mandatory": true
-        },   
+        },
         {
           "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
           "Name": "ind_6_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_6_button'] % 2 != 0"
+          "Depends": ".ind_6 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_6_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_6 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Accountability",
+          "Name": "ind_7_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "Make sure that you understand the AI output you are using and can explain it, so that you can accept accountability for its quality, originality, and fairness.",
+          "Name": "ind_7_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Did you make sure not using someone else’s work without appropriate accreditation?",
-          "AnswerType": "YesNa",
+          "Label": "Can you explain the AI output? Do you accept accountability for all resulting content?",
+          "AnswerType": "YesNo",
           "Name": "ind_7",
           "Mandatory": true
-        },   
+        },
         {
           "Type": "textArea",
           "Label": "",
           "AnswerType": "Explain",
           "Name": "ind_7_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_7_button'] % 2 != 0"
+          "Depends": ".ind_7 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_7_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_7 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Transparency",
+          "Name": "ind_8_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "Make sure that the process of using AI tools and their input to your work is documented and clearly communicated to the reader. Be clear about which tools and versions were used.",
+          "Name": "ind_8_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Are you aware of the potential effects of your AI usage on the environment?",
-          "AnswerType": "Yes",
+          "Label": "Is the use of AI documented and reported transparently?",
+          "AnswerType": "YesNo",
           "Name": "ind_8",
           "Mandatory": true
         },
@@ -146,12 +277,30 @@
           "AnswerType": "Explain",
           "Name": "ind_8_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_8_button'] % 2 != 0"
+          "Depends": ".ind_8 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_8_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_8 == 'No'"
+        },
+        {
+          "Type": "text",
+          "Label": "Broader Impact",
+          "Name": "ind_9_principle"
+        },
+        {
+          "Type": "text",
+          "Label": "Be aware of the environmental and societal effects of AI usage and consider human labor as an alternative. Also, be aware that replacing human labor affects coworkers, juniors, or researchers of marginalized backgrounds who could be involved in and profit from your research.",
+          "Name": "ind_9_preparation"
         },
         {
           "Type": "radio",
-          "Label": "Did you assess the potential biases and unfairness that can result from AI usage in your project?",
-          "AnswerType": "YesNa",
+          "Label": "Are you aware of the social, economic, and environmental impacts that could arise from your AI use and have you considered alternatives?",
+          "AnswerType": "YesNo",
           "Name": "ind_9",
           "Mandatory": true
         },
@@ -161,13 +310,21 @@
           "AnswerType": "Explain",
           "Name": "ind_9_explain",
           "Mandatory": false,
-          "Depends": "input['sections-ind_9_button'] % 2 != 0"
+          "Depends": ".ind_9 == 'Yes'"
+        },
+        {
+          "Type": "textArea",
+          "Label": "",
+          "AnswerType": "Explain",
+          "Name": "ind_9_explain_no",
+          "Mandatory": true,
+          "Depends": ".ind_9 == 'No'"
         }
       ]
     }
   },
   "Answers": {
-    "YesNo": {"Yes": "Yes", "No": "No", "N/A": "NA"},
+    "YesNo": {"Yes": "Yes", "No": "No"},
     "YesNa": {"Yes": "Yes", "N/A": "NA"},
     "Yes": {"Yes": "Yes"},
     "AlltoNone": {"All": "All", "Partially": "Partially", "None": "None", "N/A": "NA"},

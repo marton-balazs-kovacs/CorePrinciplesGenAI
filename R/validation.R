@@ -65,9 +65,13 @@ isComplete <- function(answers = NULL, sectionsList = NULL, headList = NULL){
 
 #' Validate responses to questions
 isCompleteQuestion <- function(question, answers){
-  
   # if it's not mandatory to respond, skip to another question
-  if(!question$Mandatory){
+  if(!is.null(question$Mandatory) && !question$Mandatory){
+    return(TRUE)
+  }
+  
+  # if the question is a comment or some guidance text skip
+  if (question$Type == "text") {
     return(TRUE)
   }
   

@@ -28,7 +28,7 @@ customField <- function(ind, id = NULL, answers = NULL){
       fluidRow(column(1),
                column(10, br(), strong(ind$Label)),
                column(1))
-    } else{
+    } else {
       # Add module id
       depends <- dep_ns(ind$Depends, id = id)
       
@@ -43,17 +43,17 @@ customField <- function(ind, id = NULL, answers = NULL){
   }
 }
 
-
 customButton <- function(ind, id = NULL, answers = NULL){
     
-  # Always display unconditional items  
-  if(is.null(ind$Depends)){
+  # Always display unconditional items
+  if (is.null(ind$Depends)) {
     ind$Depends <- "true"
   }
-  # else { # or display depending on the state of the input
-  #   # Add module id
-  #   ind$Depends <- dep_ns(ind$Depends, id = id)
-  # }
+  # or display depending on the state of the input
+  else {
+    # Add module id
+    ind$Depends <- dep_ns(ind$Depends, id = id)
+  }
   
   fluidPage( # wrapping into another fluid page makes a slight indentation of the questions from the text fields
     conditionalPanel(
@@ -79,17 +79,17 @@ customButton <- function(ind, id = NULL, answers = NULL){
         # This is a makeshift solution should be replaced by nested dependency structure (by rows and button element e.g.) if app gets picked up
         # in that case json-schema should be provided for the app so it is more generalizable for other tasks in the future
         # Also sections should be optional as well
-        if (ind$Mandatory){
-        column(1,
-               
-                 actionButton(
-                   inputId = paste0(id, "-", ind$Name, "_button"),
-                   label = "",
-                   icon = icon("far fa-pen-to-square", lib = "font-awesome", class = "dependency-icon")
-                 ) 
-               
-               )
-        },
+        # if (!is.null(ind$Toggle) && ind$Toggle){
+        # column(1,
+        # 
+        #          actionButton(
+        #            inputId = paste0(id, "-", ind$Name, "_button"),
+        #            label = "",
+        #            icon = icon("far fa-pen-to-square", lib = "font-awesome", class = "dependency-icon")
+        #          )
+        # 
+        #        )
+        # },
         # Icon to show whether the question is answered
         # Only for mandatory questions
         column(1,

@@ -24,5 +24,5 @@ renderReferences(language_code = NULL)
 }
 \description{
 These functions help to generate the output rmarkdown file containing the filled out
-Transparency Checklist as a string without a template on the fly.
+CARE as a string without a template on the fly.
 }

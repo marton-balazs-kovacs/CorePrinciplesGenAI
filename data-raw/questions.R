@@ -1,4 +1,5 @@
 # TODO: Add transform questions from spreadsheets
+library(tidyverse)
 # Checklist questions
 questions <- jsonlite::read_json(path = "inst/app/www/questions.json")
 
@@ -16,8 +17,8 @@ checklist <- rlang::list2(
 usethis::use_data(checklist, overwrite = TRUE, internal = TRUE)
 
 # Get all the possible question dependencies for testing
-depends <-
-  map(long$sectionsList, ~flatten(.x["Questions"])) %>% 
-  flatten(.) %>% 
-  flatten(.) %>% 
-  keep(.p = stringr::str_detect(names(.), "Depends"))
+# depends <-
+#   map(long$sectionsList, ~flatten(.x["Questions"])) %>% 
+#   flatten(.) %>% 
+#   flatten(.) %>% 
+#   keep(.p = stringr::str_detect(names(.), "Depends"))
