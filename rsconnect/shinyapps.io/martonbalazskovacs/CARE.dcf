@@ -5,9 +5,9 @@ account: martonbalazskovacs
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9297658
-bundleId: 8893030
+bundleId: 9074129
 url: https://martonbalazskovacs.shinyapps.io/CARE/
-when: 1721662976.88976
-lastSyncTime: 1721662976.88977
+when: 1725734548.21085
+lastSyncTime: 1725734548.2109
 asMultiple: FALSE
 asStatic: FALSE

@@ -38,8 +38,9 @@ mod_intro_ui <- function(id) {
       ),
       br(),
       span(
-        "A detailed explanation of the checklist is available in the publication (REF)."
-      ) |> with_i18n(NULL)
+        "A detailed explanation of the checklist is available in the ",
+        a("publication.", href = "https://osf.io/preprints/psyarxiv/g3m5f", target = "_blank")
+      )
     )
   })))
 }
