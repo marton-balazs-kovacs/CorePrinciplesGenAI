@@ -58,7 +58,7 @@ link_label = server_translate("Link to Project Repository", language_code)
 )
   
   # fill in answers with "not answered" - important for generating the files
-  bundleQuestions <- getItemList(sectionsList)
+  bundleQuestions <- get_item_list(sectionsList = sectionsList)
   not.answered <- !bundleQuestions %in% names(answers)
   notAnsweredLabel <- server_translate("Not answered", language_code)
   answers[bundleQuestions[not.answered]] <- notAnsweredLabel

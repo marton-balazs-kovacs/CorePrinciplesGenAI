@@ -61,7 +61,10 @@
           "AnswerType": "Explain",
           "Name": "ind_1_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_1 == 'No'"
+          "Depends": ".ind_1 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -96,7 +99,10 @@
           "AnswerType": "Explain",
           "Name": "ind_2_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_2 == 'No'"
+          "Depends": ".ind_2 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -137,7 +143,10 @@
           "AnswerType": "Explain",
           "Name": "ind_3_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_3 == 'No'"
+          "Depends": ".ind_3 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -172,7 +181,10 @@
           "AnswerType": "Explain",
           "Name": "ind_4_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_4 == 'No'"
+          "Depends": ".ind_4 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -207,7 +219,10 @@
           "AnswerType": "Explain",
           "Name": "ind_5_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_5 == 'No'"
+          "Depends": ".ind_5 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -242,7 +257,10 @@
           "AnswerType": "Explain",
           "Name": "ind_6_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_6 == 'No'"
+          "Depends": ".ind_6 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -277,7 +295,10 @@
           "AnswerType": "Explain",
           "Name": "ind_7_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_7 == 'No'"
+          "Depends": ".ind_7 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -312,7 +333,10 @@
           "AnswerType": "Explain",
           "Name": "ind_8_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_8 == 'No'"
+          "Depends": ".ind_8 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         },
         {
           "Type": "text",
@@ -347,7 +371,10 @@
           "AnswerType": "Explain",
           "Name": "ind_9_explain_no",
           "Mandatory": true,
-          "Depends": ".ind_9 == 'No'"
+          "Depends": ".ind_9 == 'No'",
+          "Validation": {
+            "minChar": 2
+          }
         }
       ]
     }

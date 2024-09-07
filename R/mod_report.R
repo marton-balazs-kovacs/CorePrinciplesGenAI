@@ -92,28 +92,19 @@ mod_report_ui <- function(id){
 mod_report_server <- function(id, checklist, answers, language_code){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
-    
-    # output$test <- renderText({
-      # result <- paste(answers(), collapse = ", ")
-      # result
-      # result <- paste(whichComplete(), collapse = ", ")
-      # result
-    # })
-    
-    # checks which sections are complete
+
+    # Check which sections are complete
     whichComplete <- reactive({
       # Currently the headers do not have to be filled out in order to download a checklist
-      isComplete(
+      validate_report(
         answers = answers(),
-        sectionsList = checklist$sectionsList,
-        headList = checklist$headList
+        sectionsList = checklist$sectionsList
         )
     })
 
-    # checks whether the report is complete
+    # Checks whether the whole report is complete
     isDownloadable <- reactive({
       all(whichComplete())
-      # TODO: I guess isComplete checks completeness for each section we have to rewrite that code as well if we do not use sections to make the app easier to understand
     })
 
     #### Reactive animations ----
@@ -139,33 +130,43 @@ mod_report_server <- function(id, checklist, answers, language_code){
       }
     })
     
-    # Toggle color of checker icons for questions
+    # Toggle color of checker icons for questions when the user tries to generate the report
     observeEvent(input$generatereport, {
       # Get ids of items from internal data
-      items <- getItemList(checklist$sectionsList, all = FALSE)
-      # Get responses
-      ans   <- isolate(answers())
+      items <- get_item_list(sectionsList = checklist$sectionsList, all = FALSE)
+      # Get user responses
+      ans <- isolate(answers())
       
+      # Loop through all the items and validate each one
       for(item in items) {
-        if(ans[item] == "" || is.null(ans[[item]])) {
-          shinyanimate::startAnim(
-            session,
-            # Add namespace to item ids
-            paste0("sections-", item, "Checker"),
-            type = "shake"
-            )
-        }
-
+        # Find the question corresponding to the item in the sectionsList
+        question <- get_question(item = item, sectionsList =  checklist$sectionsList)
+        
+        # Ensure we found the correct question before proceeding
+        if (!is.null(question)) {
+          validation_result <- validate_question(question = question, answers = ans)
+        
+        # Update icons based on validation
         session$sendCustomMessage(
-          type = "toggleCheckerColor",
+          type = "toggleChecker",
           message = list(
-            # namespacing of a different module
-            # think of an alternative solution later
             id = paste0("sections-", item, "Checker"),
             val = ans[[item]],
-            # namespacing of a different module
-            divId = paste0("sections-", "div", item, "Checker"))
+            complete = validation_result$complete,  # Pass validation result
+            error_message = validation_result$error_message,  # Pass error message
+            divId = paste0("sections-", "div", item, "Checker")
+          )
         )
+
+        # Trigger icon animation if validation fails
+        if (!validation_result$complete) {
+          shinyanimate::startAnim(
+            session,
+            paste0("sections-", item, "Checker"),
+            type = "shake"
+          )
+        }
+        }
       }
     })
 

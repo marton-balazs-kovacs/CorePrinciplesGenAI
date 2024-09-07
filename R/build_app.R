@@ -77,53 +77,35 @@ customButton <- function(ind, id = NULL, answers = NULL){
                br(),
                tags$span(with_i18n(ind$Label, ind$Label), style = "font-weight: bold;")
         ),
-              #a(ind$href, href = ind$href, target = "_blank"),
-              #ind$LabelEnd), # this makes the buttons appear horizontally aligned
-              # do not add ns here as it would duplicate ns tag in consequent calls
         # Answer buttons
         column(1,
                switchButtons(ind, id = id, answers = answers)
         ),
-        # Icon for opening textbox for additional explanation
-        # We decided to provide the option to add explanation by a toggle button
-        # We currently add explanation as a separate response dependent on the button which is not in questions.json
-        # This is a makeshift solution should be replaced by nested dependency structure (by rows and button element e.g.) if app gets picked up
-        # in that case json-schema should be provided for the app so it is more generalizable for other tasks in the future
-        # Also sections should be optional as well
-        # if (!is.null(ind$Toggle) && ind$Toggle){
-        # column(1,
-        # 
-        #          actionButton(
-        #            inputId = paste0(id, "-", ind$Name, "_button"),
-        #            label = "",
-        #            icon = icon("far fa-pen-to-square", lib = "font-awesome", class = "dependency-icon")
-        #          )
-        # 
-        #        )
-        # },
-        # Icon to show whether the question is answered
-        # Only for mandatory questions
+        # Icon for validation checks (Mandatory and other validation like minChar)
         column(1,
-               br(),
-               if ( ind$Mandatory ){
-                 # Adds exclamation circle next to the item
-                 tags$div(
-                   class = "toggle-icon",
-                   id = shiny::NS(id, paste0("div", ind$Name, "Checker")),
-                   title = "This question needs to be answered.",
-                   tags$i(
-                     id = shiny::NS(id,  paste0(ind$Name, "Checker")),
-                     class = 'fa fa-exclamation-circle')
+               div(
+                 class = "toggle-icon",
+                 br(),
+                 if ( ind$Mandatory ){
+                   # Adds exclamation circle next to the item
+                   tags$div(
+                     id = shiny::NS(id, paste0("div", ind$Name, "Checker")),
+                     title = "This question needs to be answered.",
+                     tags$i(
+                       id = shiny::NS(id, paste0(ind$Name, "Checker")),
+                       class = 'fa fa-exclamation-circle'
+                     ),
+                     style = "color: gray;"
                    ) |> with_i18n("This question needs to be answered.", attribute = "title")
-               }
+                 }
+               )
         ),
         # Right offset margin
         column(1)
-        )
       )
     )
+  )
 }
-
 
 switchButtons <- function(ind, id = NULL, answers = NULL){
   # Add module id
@@ -156,9 +138,9 @@ switchButtons <- function(ind, id = NULL, answers = NULL){
   )
 }
 
-
-getItemList <- function(sectionsList, all = TRUE, id = NULL){
-  # Get list of question ids
+#' Get items and add module id to them
+get_item_list <- function(sectionsList, all = TRUE, id = NULL){
+  # Get list of item ids
   items <- unlist(
     sapply(sectionsList,
            function(section) {
@@ -171,8 +153,20 @@ getItemList <- function(sectionsList, all = TRUE, id = NULL){
   items <- shiny::NS(id, items)
   
   if(all){
+    # Return all items
     return(items)
   } else {
+    # Return only items that require user input
     return(items[grep("ind", items)])
   }
+}
+
+#' Get item data from sectionList based on item Name
+get_question <- function(item, sectionsList) {
+  question <- sectionsList |>
+    purrr::map( ~ .x$Questions)  |>
+    purrr::flatten()  |>
+    purrr::detect( ~ .x$Name == item)
+  
+  return(question)
 }

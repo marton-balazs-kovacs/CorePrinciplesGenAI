@@ -1,8 +1,9 @@
 .toggle-icon {
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 100%; 
 }
-
 body {
-  font-size: 200% !important; /* Increase all font size for the whole document but keep aspects between different elements */
+  font-size: 170% !important; /* Increase all font size for the whole document but keep aspects between different elements */
 }
