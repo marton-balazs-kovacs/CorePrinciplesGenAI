@@ -13,8 +13,10 @@ composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, ans
   # Get subtitle
   subtitle <- "Checklist for responsible AI usage in research - Checklist Report"
   # Description of CARE
-  description <- "The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research."
-  # First, we create the YAML header of the rmd file (be carefully about indentation, can automatically generate another header which screws everything)
+  description <- ifelse(save_as == "pdf",
+                        "\\textit{The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research.}",
+                        "*The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research.*"
+  )  # First, we create the YAML header of the rmd file (be carefully about indentation, can automatically generate another header which screws everything)
   headYaml <- stringr::str_glue(
 "---
 title: '{study_title}'
@@ -121,30 +123,44 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
   # This function takes a question (from the .json file), checks whether it is supposed to be shown
   # (based on the answers and the conditional statements from .json)
   # If it is supposed to be shown, the question and its answer is printed
-
-
+  
   show <- TRUE
   
   # check whether the section is supposed to be shown
-  # Current dependency arsing does not work come up with a new method if gets picked up
   if(!is.null(question$Depends)){
     show <- gsub(".ind_", "answers$ind_", question$Depends)
     show <- eval(parse(text = show))
   }
   
-  # if the question is not shown, return empty space (will screw up the appearance of the rmd file, but not the pdf)
+  # If the question is not shown, return empty space
   if(!show){
     return("")
   }
   
-  body <- 
-"
-&Label &Answer
-"
+  # Initialize the body for the question label and answer
+  body <- "&Label &Answer"
   
-  # if the AnswerType is "Explain" -- additional comment following some question, render it as a comment
-  # make answers bold, but if it is a comment, show it as a quote
-  if(!is.null(question$AnswerType) && !(question$AnswerType %in% c("Explain", "OptionalComments")) ){
+  # Special handling for "_principle" items
+  if (grepl("_principle", question$Name)) {
+    # Apply bold and slightly larger font size for principles
+    label <- stringr::str_glue("{ifelse(save_as == 'pdf', '&escape&textbf{', '**')}{server_translate(question$Label, language_code)}{ifelse(save_as == 'pdf', '}', '**')}")
+    body <- gsub("&Label", label, body)
+    
+    # For principles, you might not need an answer section, so we can remove that part
+    body <- gsub("&Answer", "", body)
+    
+    # Apply additional formatting for size if needed (in LaTeX or markdown)
+    if (save_as == "pdf") {
+      body <- paste0("\\large ", body)
+    } else {
+      body <- paste0("### ", body)  # Apply markdown heading for larger size in HTML/Word
+    }
+    
+    return(paste0(body, "\n\n"))  # Ensure a couple of line breaks after principles
+  }
+  
+  # Handle regular questions
+  if (!is.null(question$AnswerType) && !(question$AnswerType %in% c("Explain", "OptionalComments"))) {
     # If the response is NA we do not translate it
     resp <- ifelse(
       answers[[question$Name]] == "NA",
@@ -156,35 +172,42 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
     answer <- stringr::str_glue(" {ifelse(save_as == 'pdf', '&escape&textbf{', '**')}{resp}{ifelse(save_as == 'pdf', '}', '**')} ")
   } else if(!is.null(question$AnswerType) && question$AnswerType %in% c("Explain", "OptionalComments") ){
     answer <- ifelse(answers[[question$Name]] == "", server_translate("No comments.", language_code), answers[[question$Name]]) # If the comment box is empty
-    answer <- paste0("\n\n> ", answer)
-  } else{
+    answer <- paste0("\n\n> ", answer, "\n\n")  # Add extra line breaks before and after the comment
+  } else {
     answer <- ""
   }
   
-
   # layout Labels
-  if( !is.null(question$href) ){
+  if(!is.null(question$href)) {
     question$Label <- paste0(question$Label, "[", question$href, "](", question$href, ")")
   }
-  if( !is.null(question$LabelEnd) ){
+  
+  if(!is.null(question$LabelEnd)) {
     question$Label <- paste0(question$Label, question$LabelEnd)
   }
   
-  if( !is.null(question$AnswerType) && !(question$AnswerType %in% c("Explain", "OptionalComments")) ){
+  if(!is.null(question$AnswerType) && !(question$AnswerType %in% c("Explain", "OptionalComments"))) {
     label <- stringr::str_glue(" {server_translate(question$Label, language_code)} {ifelse(save_as == 'pdf', '&escape&hfill', '')}")
-  } else if(!is.null(question$AnswerType) &&  question$AnswerType %in% c("Explain", "OptionalComments") ){
-    if(question$Label == ""){
+  } else if(!is.null(question$AnswerType) &&  question$AnswerType %in% c("Explain", "OptionalComments")) {
+    if(question$Label == "") {
       label <- paste0("\n")
     } else{
       label <- paste0("**", server_translate(question$Label, language_code), "**")
     }
-  } else{
+  } else {
     label <- ""
   }
   
   body <- gsub("&Label", label, body)
   body <- gsub("&Answer", answer, body)
-
+  
+  # Ensure proper line breaks between questions and answers
+  if (save_as == "pdf") {
+    body <- paste0(body, "\n\n")  # Double line break for LaTeX output
+  } else {
+    body <- paste0(body, "\n\n")  # Double line break for markdown output, no horizontal rule
+  }
+  
   return(body)
 }
 
