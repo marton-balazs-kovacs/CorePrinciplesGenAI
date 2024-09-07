@@ -192,8 +192,8 @@ composeQuestions <- function(question, answers = answers, language_code = NULL, 
 renderReferences <- function(language_code = NULL){
 out <- "
 ## &Refs
- 
-REFERENCE GOES HERE
+
+Knoechel, T., Schweizer, K., Acar, O. A., Akil, A. M., Al-Hoorie, A. H., Buehler, F., Elsherif, M., Giannini, A., Heyselaar, E., Hosseini, M., Ilangovan, V., Kovacs., M., Lin, Z., Liu, M., Peeters, A., van Ravenzwaaij, D., Vranka, M. A., Yamada, Y., Yang, Y., Aczel, B. (2024, August 21). Principles for Responsible AI Usage in Research. Retrieved from osf.io/preprints/psyarxiv/g3m5f
 "
 
   gsub("&Refs", server_translate("Source", language_code), out)
