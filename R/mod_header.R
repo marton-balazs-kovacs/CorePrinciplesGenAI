@@ -62,7 +62,7 @@ mod_header_server <- function(id, checklist){
     
     # validate e-mail
     observeEvent(input$correspondingEmail, {
-      email_validation <- isValidEmail(input$correspondingEmail)
+      email_validation <- validate_email(input$correspondingEmail)
       
         shinyFeedback::feedbackSuccess(
           inputId   = "correspondingEmail",
@@ -87,7 +87,7 @@ mod_header_server <- function(id, checklist){
         shinyFeedback::feedbackSuccess(
           inputId   = "linkToRepository",
           show      = link_valid == TRUE && input$linkToRepository != "",
-          text      = " ",
+          text      = NULL,
           color     = "black"
         )
         

@@ -1,11 +1,39 @@
 #' Validate email input
-isValidEmail <- function(x, empty.valid) {
+validate_email <- function(x, empty.valid) {
   # code from Felix Schönbrodt
   grepl("\\<[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\>", as.character(x), ignore.case = TRUE)
 }
 
 #' Validate all responses
-validate_report <- function(answers = NULL, sectionsList = NULL){
+validate_report <- function(answers = NULL, sectionsList = NULL, headList = NULL){
+  # First, check whether the answers to the header questions are:
+  # complete and valid
+  
+  # If yes, then check all sections
+  # This function escapes early, so that whenever even one question is not filled in, it returns FALSE
+  # (does not loop over everything, unless everything is valid)
+  
+  # When the app is being initialized, do not test anything
+  if(length(answers) == 8){
+    return(FALSE)
+  }
+  
+  # Check the head and return FALSE if not filled in correctly (check only the name project name and authors)
+  completeHead <- sapply(headList[1:2], function(question){
+    gsub(" ", "", answers[[question$Name]]) != ""
+  })
+  
+  if(!all(completeHead)){
+    return(FALSE)
+  }
+  
+  # do not require e-mail anymore
+  validEmail <- validate_email(answers$correspondingEmail)
+  
+  if(!validEmail){
+   return(FALSE)
+  }
+  
   # Check questions and return TRUE if filled in sufficiently
   completeSection <- vector("logical", length(sectionsList))
   
@@ -24,7 +52,11 @@ validate_report <- function(answers = NULL, sectionsList = NULL){
     completeSection[sec_idx] <- section_complete
   }
   
+  if(!all(completeSection)){
   return(completeSection)
+  }
+  
+  return(TRUE)
 }
 
 #' Validate responses to questions

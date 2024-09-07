@@ -4,7 +4,7 @@
 \alias{validate_report}
 \title{Validate all responses}
 \usage{
-validate_report(answers = NULL, sectionsList = NULL)
+validate_report(answers = NULL, sectionsList = NULL, headList = NULL)
 }
 \description{
 Validate all responses
