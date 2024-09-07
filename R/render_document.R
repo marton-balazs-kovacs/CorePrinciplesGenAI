@@ -41,6 +41,8 @@ babel-lang: chinese-simplified
 {corr_author_label}: [{corresponding_email}]({corresponding_email})
   
 {link_label}: [{link_to_rep}]({link_to_rep})
+
+{link_preprint_label}: [{link_preprint_response}]({link_preprint_response})
 ",
 save_as = save_as,
 study_title = ifelse(is.null(answers$studyTitle) || answers$studyTitle == "", 
@@ -54,8 +56,10 @@ link_to_rep = ifelse(is.null(answers$linkToRepository) || answers$linkToReposito
                     "#", answers$linkToRepository),
 language_code = ifelse(is.null(language_code), "en", language_code),
 corr_author_label = server_translate("Corresponding author's email address", language_code),
-link_label = server_translate("Link to Project Repository", language_code)
-)
+link_label = server_translate("Link to Project Repository", language_code),
+link_preprint_response = ifelse(is.null(answers$linkToPreprint) || answers$linkToPreprint == "", 
+                                "#", answers$linkToPreprint),
+link_preprint_label = "Link to Preprint")
   
   # fill in answers with "not answered" - important for generating the files
   bundleQuestions <- get_item_list(sectionsList = sectionsList)

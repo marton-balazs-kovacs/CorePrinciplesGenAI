@@ -26,6 +26,13 @@
     "AnswerType": "",
     "Name": "linkToRepository",
     "Mandatory": false
+  },
+  {
+    "Type": "textInput",
+    "Label": "Link to Preprint",
+    "AnswerType": "",
+    "Name": "linkToPreprint",
+    "Mandatory": false
   }
   ],
   "Sections" : {
