@@ -9,7 +9,7 @@ app_ui <- function(request) {
   checklist <- golem::get_golem_options("checklist")
   translation_enabled <- golem::get_golem_options("translation_enabled")
  
-  app_title <- "Criteria for AI-usage in REsearch (CARE)"
+  app_title <- "Criteria for AI-usage in REsearch (CARE) checklist"
   
   # UI
   tagList(
@@ -30,10 +30,6 @@ app_ui <- function(request) {
         windowTitle = "CARE 1.0"
       ),
       br(),
-      # Subtitle
-      column(12,
-             tags$h2(with_i18n("A Comprehensive Guideline & Checklist ", NULL)),
-             align = "center"),
       br(),
       # About panel
       fluidRow(

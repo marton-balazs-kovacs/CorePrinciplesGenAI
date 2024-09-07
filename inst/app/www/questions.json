@@ -3,25 +3,29 @@
     "Type": "textInput",
     "Label": "Title of the Study",
     "AnswerType": "",
-    "Name": "studyTitle"
+    "Name": "studyTitle",
+    "Mandatory": true
   },
   {
     "Type": "textInput",
     "Label": "All Authors [Given name(s) Surname;]",
     "AnswerType": "",
-    "Name": "authorNames"
+    "Name": "authorNames",
+    "Mandatory": true
   },
   {
     "Type": "textInput",
     "Label": "Corresponding author's email address",
     "AnswerType": "@",
-    "Name": "correspondingEmail"
+    "Name": "correspondingEmail",
+    "Mandatory": true
   },
   {
     "Type": "textInput",
     "Label": "Link to Project Repository",
     "AnswerType": "",
-    "Name": "linkToRepository"
+    "Name": "linkToRepository",
+    "Mandatory": false
   }
   ],
   "Sections" : {

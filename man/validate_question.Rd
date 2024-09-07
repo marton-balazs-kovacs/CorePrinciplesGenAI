@@ -2,10 +2,12 @@
 % Please edit documentation in R/validation.R
 \name{validate_question}
 \alias{validate_question}
-\title{Validate responses to questions}
+\title{Validate responses to questions
+Validate responses to questions}
 \usage{
 validate_question(question, answers)
 }
 \description{
+Validate responses to questions
 Validate responses to questions
 }

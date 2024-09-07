@@ -98,7 +98,8 @@ mod_report_server <- function(id, checklist, answers, language_code){
       # Currently the headers do not have to be filled out in order to download a checklist
       validate_report(
         answers = answers(),
-        sectionsList = checklist$sectionsList
+        sectionsList = checklist$sectionsList,
+        headList = checklist$headList
         )
     })
 
@@ -278,8 +279,28 @@ mod_report_server <- function(id, checklist, answers, language_code){
     output$report <- downloadHandler(
 
       filename = function() {
+        # Retrieve the study title from the answers
+        study_title <- answers()[["studyTitle"]]
+        
+        # If the title is empty or NULL, use a default name
+        if (is.null(study_title) || study_title == "") {
+          study_title <- "Untitled_Study"
+        } else {
+          # Remove special characters or spaces that may cause issues in filenames
+          study_title <- gsub("[^A-Za-z0-9]", "_", study_title)
+        }
+        
+        # Append the current date
+        current_date <- format(Sys.Date(), "%Y-%m-%d")
+        
+        # Determine the format
         save_as <- ifelse(input$save_as == "word", "doc", input$save_as)
-        paste("CARE Report", save_as, sep = ".")
+        
+        # Construct the filename
+        file_name <- paste(study_title, "CARE report", current_date, sep = "_")
+        file_name_extension <- paste(file_name, save_as, sep = ".")
+        
+        return(file_name_extension)
       },
 
       content = function(file) {
