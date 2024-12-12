@@ -18,8 +18,8 @@ mod_report_ui <- function(id){
           label = "Format",
           choices = c(
             # "pdf", 
+            "word",
             "html",
-            "word", 
             "rtf"
             ),
           multiple = FALSE, width = 'auto', inline = FALSE

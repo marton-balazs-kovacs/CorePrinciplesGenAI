@@ -48,9 +48,9 @@ customField <- function(ind, id = NULL, answers = NULL){
   }
 }
 
-customButton <- function(ind, id = NULL, answers = NULL){
+customButton <- function(ind, id = NULL, answers = NULL) {
   # Get styling of labels
-  if(!is.null(ind$Style)) {
+  if (!is.null(ind$Style)) {
     style <- ind$Style
   } else {
     style <- "font-weight: bold;"
@@ -66,45 +66,54 @@ customButton <- function(ind, id = NULL, answers = NULL){
     ind$Depends <- dep_ns(ind$Depends, id = id)
   }
   
-  fluidPage( # wrapping into another fluid page makes a slight indentation of the questions from the text fields
-    conditionalPanel(
-      condition = ind$Depends,
-      fluidRow(
-        # Left offset margin
-        column(1),
-        # Question label
-        column(8,
-               br(),
-               tags$span(with_i18n(ind$Label, ind$Label), style = "font-weight: bold;")
-        ),
-        # Answer buttons
-        column(1,
-               switchButtons(ind, id = id, answers = answers)
-        ),
-        # Icon for validation checks (Mandatory and other validation like minChar)
-        column(1,
-               div(
-                 class = "toggle-icon",
-                 br(),
-                 if ( ind$Mandatory ){
-                   # Adds exclamation circle next to the item
-                   tags$div(
-                     id = shiny::NS(id, paste0("div", ind$Name, "Checker")),
-                     title = "This question needs to be answered.",
-                     tags$i(
-                       id = shiny::NS(id, paste0(ind$Name, "Checker")),
-                       class = 'fa fa-exclamation-circle'
-                     ),
-                     style = "color: gray;"
-                   ) |> with_i18n("This question needs to be answered.", attribute = "title")
-                 }
-               )
-        ),
-        # Right offset margin
-        column(1)
-      )
-    )
-  )
+  fluidPage(# wrapping into another fluid page makes a slight indentation of the questions from the text fields
+    conditionalPanel(condition = ind$Depends,
+                     if (ind$Type == "textArea") {
+                       # Separate rows for label and textArea
+                       fluidRow(# TextArea input using switchButtons
+                         column(2),
+                         column(8,  # Larger column for textArea input
+                                switchButtons(
+                                  ind, id = id, answers = answers
+                                ),
+                                style = "display: flex;"
+                                ),
+                         column(2))
+                     } else {
+                       fluidRow(
+                         # Left offset margin
+                         column(1),
+                         # Question label
+                         column(8,
+                                br(),
+                                tags$span(
+                                  with_i18n(ind$Label, ind$Label), style = "font-weight: bold;"
+                                )),
+                         # Answer buttons
+                         column(1,
+                                switchButtons(
+                                  ind, id = id, answers = answers
+                                )),
+                         # Icon for validation checks (Mandatory and other validation like minChar)
+                         column(1,
+                                div(class = "toggle-icon",
+                                    br(),
+                                    if (ind$Mandatory) {
+                                      # Adds exclamation circle next to the item
+                                      tags$div(
+                                        id = shiny::NS(id, paste0("div", ind$Name, "Checker")),
+                                        title = "This question needs to be answered.",
+                                        tags$i(id = shiny::NS(id, paste0(
+                                          ind$Name, "Checker"
+                                        )),
+                                        class = 'fa fa-exclamation-circle'),
+                                        style = "color: gray;"
+                                      ) |> with_i18n("This question needs to be answered.", attribute = "title")
+                                    })),
+                         # Right offset margin
+                         column(1)
+                       )
+                     }))
 }
 
 switchButtons <- function(ind, id = NULL, answers = NULL){
