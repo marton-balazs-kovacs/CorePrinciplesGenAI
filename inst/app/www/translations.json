@@ -21,12 +21,12 @@
       "Hungarian": ["Word és rtf fájlok előnézete nem megtekinthető a böngészőben, helyettük markdown fájlt jelenítünk meg"]
     },
     {
-      "English": ["CARE"],
-      "Hungarian": ["CARE"]
+      "English": ["CorePrinciplesGenAI"],
+      "Hungarian": ["CorePrinciplesGenAI"]
     },
     {
-      "English": ["Criteria for AI-usage in REsearch (CARE)"],
-      "Hungarian": ["Criteria for AI-usage in REsearch (CARE)"]
+      "English": ["Core Principles of Responsible Generative AI Usage in Research"],
+      "Hungarian": ["Core Principles of Responsible Generative AI Usage in Research"]
     },
     {
       "English": ["Select Language"],
@@ -85,8 +85,8 @@
       "Hungarian": ["A checklistről"]
     },
     {
-      "English": ["What is CARE?"],
-      "Hungarian": ["Mi az a CARE?"]
+      "English": ["What is this checklist?"],
+      "Hungarian": ["Mi ez a checklist?"]
     },
     {
       "English": ["How to use it?"],
@@ -117,8 +117,8 @@
       "Hungarian": ["Töltse fel a riportját egy nyílvános adattárba."]
     },
     {
-      "English": ["You can cite the CARE as follows:"],
-      "Hungarian": ["A CARE-t a következőképpen hivatkozhatja:"]
+      "English": ["You can cite the paper as follows:"],
+      "Hungarian": ["A cikket a következőképpen hivatkozhatja:"]
     },
     {
       "English": ["Feedback and recommendations for an update of the checklist can be provided here:"],

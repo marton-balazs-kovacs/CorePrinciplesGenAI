@@ -24,5 +24,5 @@ renderReferences(language_code = NULL)
 }
 \description{
 These functions help to generate the output rmarkdown file containing the filled out
-CARE as a string without a template on the fly.
+CorePrinciplesGenAI as a string without a template on the fly.
 }

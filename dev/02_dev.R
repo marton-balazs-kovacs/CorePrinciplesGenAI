@@ -63,7 +63,7 @@ usethis::use_test("app")
 # Documentation
 
 ## Vignette ----
-usethis::use_vignette("CARE")
+usethis::use_vignette("CorePrinciplesGenAI")
 devtools::build_vignettes()
 
 ## Code Coverage----

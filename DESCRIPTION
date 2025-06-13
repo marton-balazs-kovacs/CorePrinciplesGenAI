@@ -1,6 +1,6 @@
-Package: CARE
-Title: Criteria for AI-usage in REsearch
-Version: 0.0.0.9000
+Package: CorePrinciplesGenAI
+Title: Core Principles of Responsible Generative AI Usage in Research Checklist
+Version: 1.0.0
 Authors@R: person('Marton', 'Kovacs', email = 'marton.balazs.kovacs@gmail.com', role = c('cre', 'aut'))
 Description: Checklist for assessing responsible use of AI in research.
 License: MIT + file LICENSE
@@ -28,9 +28,9 @@ Imports:
     stringr
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.2.3
-URL: https://github.com/marton-balazs-kovacs/CARE
-BugReports: https://github.com/marton-balazs-kovacs/CARE/issues
+RoxygenNote: 7.3.2
+URL: https://github.com/marton-balazs-kovacs/CorePrinciplesGenAI
+BugReports: https://github.com/marton-balazs-kovacs/CorePrinciplesGenAI/issues
 Suggests: 
     spelling,
     testthat (>= 3.0.0)

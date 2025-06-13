@@ -18,16 +18,6 @@
 ## either re-run this function, call golem::set_golem_name(), or don't forget
 ## to change the name in the app_sys() function in app_config.R /!\
 ##
-golem::fill_desc(
-  pkg_name = "CARE", # The Name of the package containing the App
-  pkg_title = "Criteria for AI-usage in REsearch", # The Title of the package containing the App
-  pkg_description = "Checklist for assessing responsible use of AI in research.", # The Description of the package containing the App
-  author_first_name = "Marton", # Your First Name
-  author_last_name = "Kovacs", # Your Last Name
-  author_email = "marton.balazs.kovacs@gmail.com", # Your Email
-  repo_url = "https://github.com/marton-balazs-kovacs/CARE", # The URL of the GitHub Repo (optional),
-  pkg_version = "0.0.0.9000" # The Version of the package containing the App
-)
 
 ## Set {golem} options ----
 golem::set_golem_options()

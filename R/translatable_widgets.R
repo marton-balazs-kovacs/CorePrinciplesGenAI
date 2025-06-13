@@ -1,13 +1,15 @@
-#' Translatable widgets
-#' 
-#' @description Some widgets are not translatable by the current implementation if i18n in Shiny.
-#' These functions hard code html for these widgets with translatable options.
-#' 
-NULL
-
-#' blabla
-#' 
-#' @description shinyWidgets::pickerInput
+#' Translatable Widgets
+#'
+#' @title Translatable Widgets for Shiny
+#' @description These functions provide customized UI elements (picker input, radio buttons, text area)
+#' with built-in internationalization (i18n) support.
+#' @name translatable_widgets
+#' @param inputId The input ID.
+#' @param choices Named vector or list of choices.
+#' @param placeholder Placeholder text.
+#' @param rows Number of rows in the textarea.
+#' @return HTML tags (UI elements).
+#' @export
 pickerInputTranslatable <- function(inputId, choices) {
   options <- list()
   for(i in seq_along(choices)) {
@@ -29,7 +31,8 @@ pickerInputTranslatable <- function(inputId, choices) {
   )
 }
 
-#' @description This function hard codes html for shiny::radioButton with translatable options 
+#' @rdname translatable_widgets
+#' @export
 radioButtonTranslatable <- function(inputId, choices) {
   div(id = inputId, class = "form-group shiny-input-radiogroup shiny-input-container", role = "radiogroup", `aria-labelledby` = sprintf("%s-label", inputId),
       tags$label(class = "control-label", id = sprintf("%s-label", inputId), `for` = inputId),
@@ -45,6 +48,8 @@ radioButtonTranslatableOptions <- function(choices, inputId) {
   div(class = "shiny-options-group", options)
 }
 
+#' @rdname translatable_widgets
+#' @export
 radioButtonTranslatableOption <- function(choice, inputId) {
   div(class = "radio-inline",
       tags$input(type = "radio", name = inputId, value = choice),  
@@ -61,8 +66,8 @@ radioButtonTranslatableOption <- function(choice, inputId) {
   )
 }
 
-#' @description This function hard codes html for shiny::textArea with translatable placeholder
-# TODO: Check if placeholder translation is working
+#' @rdname translatable_widgets
+#' @export
 textAreaInputTranslatable <- function(inputId, placeholder, rows) {
   div(class = "form-group shiny-input-container",
       style = "flex-grow: 1;",

@@ -2,7 +2,7 @@
 #' 
 #' @description 
 #' These functions help to generate the output rmarkdown file containing the filled out
-#' CARE as a string without a template on the fly.
+#' CorePrinciplesGenAI as a string without a template on the fly.
 #'
 #' @name render_document
 #' @aliases NULL
@@ -12,7 +12,7 @@ NULL
 composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, answerList = NULL, language_code = NULL, save_as = "pdf"){
   # Get subtitle
   subtitle <- "Checklist for responsible AI usage in research - Checklist Report"
-  # Description of CARE
+  # Description of CorePrinciplesGenAI
   description <- ifelse(save_as == "pdf",
                         "\\textit{The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research.}",
                         "*The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research.*"
