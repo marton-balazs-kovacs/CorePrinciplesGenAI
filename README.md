@@ -4,6 +4,8 @@
 # Core Principles of Responsible Generative AI Usage in Research Checklist
 
 <!-- badges: start -->
+
+[![DOI](https://zenodo.org/badge/652677533.svg)](https://doi.org/10.5281/zenodo.15657711)
 <!-- badges: end -->
 
 The goal of this project is to provide a simple web interface for

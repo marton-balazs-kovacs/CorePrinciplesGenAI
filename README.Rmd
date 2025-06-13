@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # Core Principles of Responsible Generative AI Usage in Research Checklist
 
 <!-- badges: start -->
+[![DOI](https://zenodo.org/badge/652677533.svg)](https://doi.org/10.5281/zenodo.15657711)
 <!-- badges: end -->
 
 The goal of this project is to provide a simple web interface for completing the checklist for the __Core Principles of Responsible Generative AI Usage in Research__ project. At the end of a research project this checklist could be filled out through this Shiny app and a well-formatted report can be generated to supplement the paper.
