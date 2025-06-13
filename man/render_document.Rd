@@ -13,7 +13,7 @@ composeRmd(
   headList = NULL,
   answerList = NULL,
   language_code = NULL,
-  save_as = "pdf"
+  save_as = "html"
 )
 
 composeSections(section, answers = NULL, language_code = NULL, save_as)

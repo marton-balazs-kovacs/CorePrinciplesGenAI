@@ -9,7 +9,7 @@
 NULL
 
 #' @rdname render_document
-composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, answerList = NULL, language_code = NULL, save_as = "pdf"){
+composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, answerList = NULL, language_code = NULL, save_as = "html"){
   # Get subtitle
   subtitle <- "Checklist for responsible Gen AI usage in research - Checklist Report"
   # Description of CorePrinciplesGenAI
