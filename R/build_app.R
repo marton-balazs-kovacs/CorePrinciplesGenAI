@@ -78,7 +78,25 @@ customButton <- function(ind, id = NULL, answers = NULL) {
                                 ),
                                 style = "display: flex;"
                                 ),
-                         column(2))
+                         # Icon for validation checks (Mandatory and other validation like minChar)
+                         column(1,
+                                div(class = "toggle-icon",
+                                    br(),
+                                    if (ind$Mandatory) {
+                                      # Adds exclamation circle next to the item
+                                      tags$div(
+                                        id = shiny::NS(id, paste0("div", ind$Name, "Checker")),
+                                        title = "This question needs to be answered.",
+                                        tags$i(id = shiny::NS(id, paste0(
+                                          ind$Name, "Checker"
+                                        )),
+                                        class = 'fa fa-exclamation-circle'),
+                                        style = "color: gray;"
+                                      ) |> with_i18n("This question needs to be answered.", attribute = "title")
+                                    })),
+                         # Right offset margin
+                         column(1)
+                         )
                      } else {
                        fluidRow(
                          # Left offset margin

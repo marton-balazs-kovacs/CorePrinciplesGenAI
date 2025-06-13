@@ -2,6 +2,11 @@ Shiny.addCustomMessageHandler("toggleChecker", function(message) {
   var el = document.getElementById(message.id);
   var eldiv = document.getElementById(message.divId);
   
+   if (!el || !eldiv) {
+    console.warn("toggleChecker: element not found", message.id, message.divId);
+    return;
+  }
+  
   // Determine the color based on validation status
   var iconColor;
 

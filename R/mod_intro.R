@@ -13,24 +13,24 @@ mod_intro_ui <- function(id) {
     div(
       id = "intro-modal-content",
       p(
-        "The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research."
+        "The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of GenAI in research."
       ) |> with_i18n(NULL),
       h3("Instruction") |> with_i18n(NULL),
       p(
-        "Please fill out the checklist on behalf of your co-authors. It's important that before using any AI tools in your research, that you:"
+        "Please fill out the checklist on behalf of your co-authors. It's important that before using any GenAI tools in your research, that you:"
       ) |> with_i18n(NULL),
       ol(
         li(
-          "Become and remain well-informed about the regulations of AI usage that are relevant to your study, including data security, transparency, and originality;"
+          "Become and remain well-informed about the regulations of GenAI usage that are relevant to your study, including data security, transparency, and originality;"
         ) |> with_i18n(NULL),
         li(
-          "Gather sufficient knowledge and experience such that you are able to use your AI tool professionally;"
+          "Gather sufficient knowledge and experience such that you are able to use your GenAI tool professionally;"
         ) |> with_i18n(NULL),
         li(
-          "Set quality criteria and quality control procedures for your AI-assisted outcomes;"
+          "Set quality criteria and quality control procedures for your GenAI-assisted outcomes;"
         ) |> with_i18n(NULL),
         li(
-          "Consult your co-authors and ensure they are aware of and comply with the requirements for responsible AI usage listed in this checklist."
+          "Consult your co-authors and ensure they are aware of and comply with the requirements for responsible GenAI usage listed in this checklist."
         ) |> with_i18n(NULL),
         li(
           "Fill out all the questions. If your answer is ‘no’ you are required to provide sufficient explanation to complete the checklist. After filling out the checklist, you can generate the report."
