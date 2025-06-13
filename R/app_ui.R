@@ -27,7 +27,7 @@ app_ui <- function(request) {
                with_i18n(app_title, NULL),
                align = "center"
         ),
-        windowTitle = "CorePrinciplesGenAI 1.0"
+        windowTitle = "CorePrincipleGenAIChecklist 1.0"
       ),
       br(),
       br(),
@@ -92,7 +92,7 @@ golem_add_external_resources <- function() {
     favicon(),
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "CorePrinciplesGenAI"
+      app_title = "CorePrincipleGenAIChecklist"
     ),
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()

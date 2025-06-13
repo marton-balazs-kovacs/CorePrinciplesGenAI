@@ -297,7 +297,7 @@ mod_report_server <- function(id, checklist, answers, language_code){
         save_as <- ifelse(input$save_as == "word", "doc", input$save_as)
         
         # Construct the filename
-        file_name <- paste(study_title, "CorePrinciplesGenAI report", current_date, sep = "_")
+        file_name <- paste(study_title, "CorePrincipleGenAIChecklist report", current_date, sep = "_")
         file_name_extension <- paste(file_name, save_as, sep = ".")
         
         return(file_name_extension)

@@ -126,7 +126,7 @@ get_language <- function(
 #' @param local character. Either a path or a URL to the JSON file containing the translations
 #' 
 #' @noRd
-server_translate <- function(i18n, language_code = NULL, local = "https://raw.githubusercontent.com/marton-balazs-kovacs/CorePrinciplesGenAI/master/inst/app/www/i18n_locales.json") {
+server_translate <- function(i18n, language_code = NULL, local = "https://raw.githubusercontent.com/marton-balazs-kovacs/CorePrincipleGenAIChecklist/master/inst/app/www/i18n_locales.json") {
   # If language_code = NULL return early the not translated version
   if(is.null(language_code)) {
     return(i18n)

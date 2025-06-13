@@ -25,7 +25,7 @@ run_app <- function(
       uiPattern = uiPattern
     ),
     golem_opts = list(
-      checklist = CorePrinciplesGenAI:::checklist,
+      checklist = CorePrincipleGenAIChecklist:::checklist,
       translation_enabled = translation_enabled # Change this to TRUE if you would like to enable translations
     )
   )

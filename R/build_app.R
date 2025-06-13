@@ -138,7 +138,7 @@ switchButtons <- function(ind, id = NULL, answers = NULL){
   # Add module id
   ind$Name <- shiny::NS(id, ind$Name)
   
-  answerList <- CorePrinciplesGenAI:::checklist$answerList
+  answerList <- CorePrincipleGenAIChecklist:::checklist$answerList
   # if the AnswerType is specified in the answerList object (from .json), the button options should be rendered from 
   # those options
   # otherwise, the AnswerType is passed directly to the options
