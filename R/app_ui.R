@@ -45,7 +45,7 @@ app_ui <- function(request) {
         column(1),
         column(
           10,
-          h3("Please select an answer for each item below. If you choose Yes and you want to elaborate on your answer, you can do so in the comment box that follows the question. If your answer is No you must provide an additional explanation.") |> with_i18n(NULL)
+          h3('Please select an answer for each item below. If you choose "Yes" and you want to elaborate on your answer, you can do so in the comment box that follows the question. If your answer is "No" you must provide an additional explanation.') |> with_i18n(NULL)
         ),
         column(1)
       ),
