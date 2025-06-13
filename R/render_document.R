@@ -11,7 +11,7 @@ NULL
 #' @rdname render_document
 composeRmd <- function(answers = NULL, sectionsList = NULL, headList = NULL, answerList = NULL, language_code = NULL, save_as = "pdf"){
   # Get subtitle
-  subtitle <- "Checklist for responsible AI usage in research - Checklist Report"
+  subtitle <- "Checklist for responsible Gen AI usage in research - Checklist Report"
   # Description of CorePrinciplesGenAI
   description <- ifelse(save_as == "pdf",
                         "\\textit{The aim of this checklist is to provide a framework for researchers, publishers, and institutions to prepare and assess a responsible use of AI in research.}",

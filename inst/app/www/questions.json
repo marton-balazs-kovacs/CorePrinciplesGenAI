@@ -47,13 +47,13 @@
         },
         {
           "Type": "text",
-          "Label": "Ensure that your AI usage and application follow the applicable institutional, national, international, and publishers' regulations and policies. In addition, identify and address potential ethical risks associated with your AI application in accordance with your ethical review board.",
+          "Label": "Ensure that your GenAI usage and application follow the applicable institutional, national, international, and publishers' regulations and policies. In addition, identify and address potential ethical risks associated with your GenAI application in accordance with your ethical review board.",
           "Name": "ind_1_preparation",
           "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
-          "Label": "Do the applicable regulations and policies allow for the use of AI tools in research in your work?",
+          "Label": "Do the applicable regulations and policies allow for the use of GenAI tools in research in your work?",
           "AnswerType": "YesNo",
           "Name": "ind_1",
           "Mandatory": true
@@ -85,13 +85,13 @@
         },
         {
           "Type": "text",
-          "Label": "To prevent compromising private or sensitive information when working with AI, you should (i) anonymize or pseudonymize all input data, (ii) opt out of data usage and storage in the AI application(s) where possible, and (iii) consult an expert on the topic of data security if needed. Whenever relevant, inform the participants how their data will be used in the AI application.",
+          "Label": "To prevent compromising private or sensitive information when working with GenAI, you should (i) anonymise or pseudonymise all input data, (ii) opt out of data usage and storage in the GenAI application(s) where possible, and (iii) consult an expert on the topic of data security if needed. Whenever relevant, inform the participants how their data will be used in the GenAI application.",
           "Name": "ind_2_preparation",
           "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
-          "Label": "Is your research using AI compatible with data privacy and security regulations?",
+          "Label": "Is your research using GenAI compatible with data privacy and security regulations?",
           "AnswerType": "YesNo",
           "Name": "ind_2",
           "Mandatory": true
@@ -135,7 +135,7 @@
         },
         {
           "Type": "radio",
-          "Label": "Do you have specific quality criteria for the outputs of your AI tool?",
+          "Label": "Do you have specific quality criteria for the outputs of your GenAI tool?",
           "AnswerType": "YesNo",
           "Name": "ind_3",
           "Mandatory": true
@@ -167,7 +167,7 @@
         },
         {
           "Type": "text",
-          "Label": "A human contributor should assess whether the AI-generated outputs or their modified version satisfy previously set quality criteria.<br><b>Correctness:</b> Is the output accurate and correct according to the set quality criteria?<br><b>Reasoning:</b> Does the output make logical sense? Is it free of contradictions?<br><b>Relevance:</b> Is the output relevant, comprehensive, and up-to-date according to human expertise?<br><b>Professional quality:</b> Does the output satisfy all the other set quality expectations?",
+          "Label": "A human contributor should assess whether the GenAI-generated outputs or their modified version satisfy previously set quality criteria.<br><b>Correctness:</b> Is the output accurate and correct according to the set quality criteria?<br><b>Reasoning:</b> Does the output make logical sense? Is it free of contradictions?<br><b>Relevance:</b> Is the output relevant, comprehensive, and up-to-date according to human expertise?<br><b>Professional quality:</b> Does the output satisfy all the other set quality expectations?",
           "Name": "ind_4_preparation",
           "Style": "font-style: italic;"
         },
@@ -243,13 +243,13 @@
         },
         {
           "Type": "text",
-          "Label": "AI can create random or systematic biases. Ensure you systematically check whether your AI outputs reflect or perpetuate existing biases, power structures, stereotypes or biased consensus within society or academia, or introduce novel biases. Mitigate these biases where possible and relevant.",
+          "Label": "AI can create random or systematic biases. Ensure you systematically check whether your GenAI outputs reflect or perpetuate existing biases, power structures, stereotypes or biased consensus within society or academia, or introduce novel biases. Mitigate these biases where possible and relevant.",
           "Name": "ind_6_preparation",
           "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
-          "Label": "Did you try to make sure that your project does not create, reflect or perpetuate biases or unfairness due to  AI usage?",
+          "Label": "Did you try to make sure that your project does not create, reflect or perpetuate biases or unfairness due to GenAI usage?",
           "AnswerType": "YesNo",
           "Name": "ind_6",
           "Mandatory": true
@@ -281,13 +281,13 @@
         },
         {
           "Type": "text",
-          "Label": "Make sure that you understand the AI output you are using and can explain it, so that you can accept accountability for its quality, originality, and fairness.",
+          "Label": "Make sure that you understand the GenAI output you are using and can explain it, so that you can accept accountability for its quality, originality, and fairness.",
           "Name": "ind_7_preparation",
           "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
-          "Label": "Can you explain the AI output? Do you accept accountability for all resulting content?",
+          "Label": "Can you explain the GenAI output? Do you accept accountability for all resulting content?",
           "AnswerType": "YesNo",
           "Name": "ind_7",
           "Mandatory": true
@@ -319,13 +319,13 @@
         },
         {
           "Type": "text",
-          "Label": "Make sure that the process of using AI tools and their input to your work is documented and clearly communicated to the reader. Be clear about which tools and versions were used.",
+          "Label": "Make sure that the process of using GenAI tools and their input to your work is documented and clearly communicated to the reader. Be clear about which tools and versions were used.",
           "Name": "ind_8_preparation",
           "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
-          "Label": "Is the use of AI documented and reported transparently?",
+          "Label": "Is the use of GenAI documented and reported transparently?",
           "AnswerType": "YesNo",
           "Name": "ind_8",
           "Mandatory": true
@@ -357,13 +357,13 @@
         },
         {
           "Type": "text",
-          "Label": "Be aware of the environmental and societal effects of AI usage and consider human labor as an alternative. Also, be aware that replacing human labor affects coworkers, juniors, or researchers of marginalized backgrounds who could be involved in and profit from your research.",
+          "Label": "Be aware of the environmental and societal effects of GenAI usage and consider human labour as an alternative. Also, be aware that replacing human labour affects co-workers, juniors, or researchers of marginalised backgrounds who could be involved in and profit from your research.",
           "Name": "ind_9_preparation",
           "Style": "font-style: italic;"
         },
         {
           "Type": "radio",
-          "Label": "Are you aware of the social, economic, and environmental impacts that could arise from your AI use and have you considered alternatives?",
+          "Label": "Are you aware of the social, economic, and environmental impacts that could arise from your GenAI use and have you considered alternatives?",
           "AnswerType": "YesNo",
           "Name": "ind_9",
           "Mandatory": true
